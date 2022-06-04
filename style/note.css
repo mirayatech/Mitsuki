@@ -71,13 +71,18 @@
 .note-card {
   display: flex;
   height: 215px;
+  overflow-y: auto;
   border-radius: 15px;
   flex-direction: column;
   padding: 15px 20px 20px;
+  transition: all 0.3s ease;
   justify-content: space-evenly;
-  border: 2px solid var(--nav-color);
 
-  overflow-y: auto;
+  border: 2px solid var(--nav-color);
+}
+
+.note-card:hover {
+  border: 2px solid var(--main-color);
 }
 
 .note-card::-webkit-scrollbar {
@@ -94,6 +99,9 @@
 }
 
 /* Note Card - Details */
+.note-card .details {
+  cursor: default;
+}
 
 .note-card .details h3 {
   padding-bottom: 5px;
