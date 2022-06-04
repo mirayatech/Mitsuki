@@ -38,3 +38,11 @@ a {
   background: var(--white);
   box-shadow: 0 5px 1.5rem rgba(0, 0, 0, 0.1);
 }
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  display: flex;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--line-color);
+}
