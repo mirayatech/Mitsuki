@@ -5,7 +5,7 @@
   --dark-grey: #1e2739;
   --text-color: #9b9fa4;
   --body-color: #f6f8fa;
-  --nav-active-color: #87e6ba;
+  --main-color: #87e6ba;
 }
 
 * {
@@ -121,11 +121,11 @@ a {
 }
 
 input:checked + .slider {
-  background-color: var(--nav-active-color);
+  background-color: var(--main-color);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--nav-active-color);
+  box-shadow: 0 0 1px var(--main-color);
 }
 
 input:checked + .slider:before {

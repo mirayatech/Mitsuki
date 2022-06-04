@@ -1,18 +1,66 @@
+:root {
+  --white: #ffff;
+  --nav-color: #bfc5cd;
+  --line-color: #f4f4f4;
+  --dark-grey: #1e2739;
+  --text-color: #9b9fa4;
+  --body-color: #f6f8fa;
+  --main-color: #87e6ba;
+}
+
 /* Note Page */
 .note-page {
+  gap: 100px;
   width: 100%;
   height: 75vh;
-  margin: 30px;
   display: grid;
+  overflow-y: auto;
   max-width: 1800px;
-  gap: 20px;
+  padding-top: 50px;
+  justify-content: center;
   grid-template-columns: repeat(auto-fill, 265px);
+}
+
+.note-page::-webkit-scrollbar {
+  width: 5px;
+}
+.note-page::-webkit-scrollbar-track {
+  border-radius: 25px;
+  background: #f1f1f1;
+}
+
+.note-page::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: #e6e6e6;
 }
 
 .note-page .add-note {
   height: 200px;
   border-radius: 15px;
   background: var(--white);
-  border: 2px solid var(--line-color);
-  box-shadow: 0 5px 1rem rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--main-color);
+}
+
+.note-page .add-note {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.note-page .add-note .circle i {
+  width: 78px;
+  height: 78px;
+  padding: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: var(--main-color);
+  font-size: calc(20 / 16 * 1rem);
+  border: 2px dashed var(--main-color);
+}
+.note-page .add-note p {
+  font-size: 1rem;
+  font-weight: 500;
+  padding-top: 15px;
+  color: var(--main-color);
 }
