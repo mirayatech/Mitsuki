@@ -133,3 +133,13 @@ input:checked + .slider:before {
   -ms-transform: translateX(26px);
   -webkit-transform: translateX(26px);
 }
+
+/* Note Page */
+.note-page {
+  width: 100%;
+  height: 80vh;
+  margin: 30px;
+  display: grid;
+  max-width: 1800px;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
