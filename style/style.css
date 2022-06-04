@@ -43,13 +43,10 @@ a {
 .navbar {
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
   border-bottom: 2px solid var(--line-color);
-}
-
-.navbar .logo {
-  padding-right: 30px;
 }
 
 .navbar .logo h2 {
