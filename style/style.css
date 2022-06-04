@@ -34,5 +34,7 @@ a {
   margin: auto;
   padding: 30px;
   max-width: 1800px;
+  border-radius: 20px;
   background: var(--white);
+  box-shadow: 0 5px 1.5rem rgba(0, 0, 0, 0.1);
 }
