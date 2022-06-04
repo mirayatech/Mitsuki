@@ -150,3 +150,39 @@
   cursor: pointer;
   font-size: 1rem;
 }
+
+/* Settings */
+.settings {
+  position: relative;
+}
+.settings-menu {
+  z-index: 1;
+  cursor: default;
+  bottom: 1px;
+  right: 1px;
+  position: absolute;
+  font-weight: 500;
+  background: var(--white);
+  height: auto;
+  width: 100px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.settings-menu li,
+.settings-menu i {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 5px;
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.settings-menu i {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 5px;
+  font-size: calc(13 / 16 * 1rem);
+}
