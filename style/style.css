@@ -50,10 +50,6 @@ a {
   padding-right: 30px;
 }
 
-.navbar .line {
-  border-right: 2px solid var(--line-color);
-}
-
 .navbar .nav-item .item-list {
   display: flex;
 }
