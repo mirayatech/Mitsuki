@@ -52,6 +52,11 @@ a {
   padding-right: 30px;
 }
 
+.navbar .logo h2 {
+  color: var(--dark-grey);
+  font-size: calc(30 / 16 * 1rem);
+}
+
 .navbar .nav-item .item-list {
   display: flex;
 }
