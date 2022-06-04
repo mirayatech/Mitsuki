@@ -71,6 +71,7 @@
 .note-card {
   display: flex;
   height: 215px;
+  cursor: pointer;
   overflow-y: auto;
   border-radius: 15px;
   flex-direction: column;
@@ -100,16 +101,21 @@
 
 /* Note Card - Details */
 .note-card .details {
+  cursor: pointer;
   cursor: default;
 }
 
 .note-card .details h3 {
+  cursor: pointer;
+
   padding-bottom: 5px;
   color: var(--dark-grey);
   font-size: calc(18 / 16 * 1rem);
 }
 
 .note-card .details p {
+  cursor: pointer;
+
   font-weight: 500;
   padding-bottom: 10px;
   color: var(--text-color);
