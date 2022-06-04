@@ -68,3 +68,64 @@ a {
 .nav-item .item-list .item-links.active {
   color: #87e6ba;
 }
+
+/* Switch Button */
+
+.dark-light-mode {
+  width: 60px;
+  height: 34px;
+  position: relative;
+  display: inline-block;
+}
+
+.dark-light-mode input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.slider {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  transition: 0.4s;
+  position: absolute;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+}
+
+.slider:before {
+  left: 4px;
+  content: "";
+  bottom: 4px;
+  width: 26px;
+  height: 26px;
+  transition: 0.4s;
+  position: absolute;
+  -webkit-transition: 0.4s;
+  background-color: white;
+}
+
+input:checked + .slider {
+  background-color: var(--nav-active-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--nav-active-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+}
