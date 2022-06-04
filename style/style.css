@@ -26,3 +26,12 @@ ul {
 a {
   text-decoration: none;
 }
+
+/* Section - White background */
+.section {
+  width: 100%;
+  margin: auto;
+  padding: 30px;
+  max-width: 1800px;
+  background: var(--white);
+}
