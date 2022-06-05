@@ -112,13 +112,13 @@
 }
 
 /* Note Page */
+
 .note-page {
-  opacity: 0;
-  pointer-events: none;
   gap: 100px;
   width: 100%;
   height: 75vh;
-  display: grid;
+  display: none;
+  /* display: grid; */
   overflow-y: auto;
   max-width: 1800px;
   padding-top: 50px;
