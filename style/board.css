@@ -9,7 +9,6 @@
 }
 
 /* board Page */
-
 .board-page {
   gap: 100px;
   width: 100%;
@@ -20,4 +19,19 @@
   padding-top: 50px;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, 265px);
+}
+
+/* Add Column */
+.add-column .add-column-btn {
+  padding: 5px;
+  width: 200px;
+  font-size: calc(17 / 16 * 1rem);
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  color: var(--dark-grey);
+  cursor: pointer;
+}
+.add-column .add-column-btn i {
+  font-size: calc(14 / 16 * 1rem);
 }
