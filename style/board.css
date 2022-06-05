@@ -146,13 +146,50 @@
   justify-content: space-between;
 }
 
-.bottom-details .date {
+.card-list .bottom-details .date {
   cursor: default;
   font-weight: 500;
   font-size: calc(14 / 16 * 1rem);
 }
 
-.bottom-details i {
+.card-list .bottom-details i {
   cursor: pointer;
   font-size: 1rem;
+}
+
+/* Settings */
+.card-list .bottom-details .settings {
+  position: relative;
+}
+
+.card-list .bottom-details .settings-menu {
+  z-index: 1;
+  cursor: default;
+  bottom: 1px;
+  right: 1px;
+  position: absolute;
+  font-weight: 500;
+  background: var(--white);
+  height: auto;
+  width: 100px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.card-list .bottom-details .settings-menu li,
+.card-list .bottom-details .settings-menu i {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 5px;
+  font-size: calc(14 / 16 * 1rem);
+}
+
+.card-list .bottom-details .settings-menu i {
+  cursor: pointer;
+  color: var(--text-color);
+  margin: 5px;
+  font-size: calc(13 / 16 * 1rem);
 }
