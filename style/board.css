@@ -136,3 +136,12 @@
   padding: 1px;
   background: var(--nav-color);
 }
+
+/* Note Card - Bottom details */
+.card-list .bottom-details {
+  padding-top: 10px;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
