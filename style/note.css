@@ -10,6 +10,8 @@
 
 /* Popup Box */
 .popup-box {
+  opacity: 0;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
