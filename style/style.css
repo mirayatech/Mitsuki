@@ -69,10 +69,12 @@ button {
 }
 
 .nav-item .item-list .item-links {
+  cursor: pointer;
   padding: 0 30px;
   font-weight: 500;
   color: var(--nav-color);
   font-size: calc(20 / 16 * 1rem);
+  transition: all 0.3s ease;
 }
 
 .nav-item .item-list .item-links.active {
