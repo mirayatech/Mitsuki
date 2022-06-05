@@ -8,6 +8,107 @@
   --main-color: #87e6ba;
 }
 
+/* Popup Box */
+.popup-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.589);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.popup-box .popup {
+  border-radius: 15px;
+  padding: 30px;
+  background: var(--white);
+  height: auto;
+  width: 400px;
+}
+
+/* Popup Box - Content */
+.popup .content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Content - Header */
+.popup .content header {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid var(--nav-color);
+}
+
+.popup .content header p {
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: var(--dark-grey);
+  font-size: calc(18 / 16 * 1rem);
+}
+.popup .content header i {
+  font-size: calc(22 / 16 * 1rem);
+  transform: rotate(45deg);
+  position: absolute;
+  left: 330px;
+  top: -10px;
+  cursor: pointer;
+}
+
+/* Content - Form */
+.popup #popup-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.popup #popup-form button {
+  cursor: pointer;
+  margin: 15px auto 0 auto;
+  padding: 8px 0;
+  border-radius: 5px;
+  border: none;
+  font-weight: 500;
+  background: var(--main-color);
+  color: var(--white);
+  width: 100px;
+}
+
+.row.title {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.row.title input {
+  font-size: calc(15 / 16 * 1rem);
+  padding: 20px 10px;
+  height: 30px;
+  border: 1px solid var(--nav-color);
+  border-radius: 5px;
+}
+.row.title label,
+.row.description label {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--dark-grey);
+  font-size: 1rem;
+}
+
+.row.description textarea {
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: calc(15 / 16 * 1rem);
+  padding: 10px;
+  width: 100%;
+  height: 130px;
+  border: 1px solid var(--nav-color);
+  border-radius: 5px;
+}
+
 /* Note Page */
 .note-page {
   gap: 100px;

@@ -32,6 +32,12 @@ a {
   text-decoration: none;
 }
 
+input,
+textarea,
+button {
+  outline: none;
+}
+
 /* Section - White background */
 .section {
   width: 100%;
