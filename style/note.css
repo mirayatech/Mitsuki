@@ -118,6 +118,18 @@
 
 /* Note Page */
 
+.note-page.show {
+  gap: 100px;
+  width: 100%;
+  height: 75vh;
+  display: grid;
+  overflow-y: auto;
+  max-width: 1800px;
+  padding-top: 50px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 265px);
+}
+
 .note-page {
   gap: 100px;
   width: 100%;
