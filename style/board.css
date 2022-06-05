@@ -73,3 +73,58 @@
   background: var(--main-color);
   color: var(--white);
 }
+
+/* Add card*/
+.add-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-card h3 {
+  font-size: calc(20 / 16 * 1rem);
+  color: var(--dark-grey);
+  text-align: center;
+}
+
+.add-card button {
+  width: 100%;
+  margin: 10px auto 15px auto;
+  padding: 5px;
+  font-size: calc(16 / 16 * 1rem);
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  color: var(--dark-grey);
+  cursor: pointer;
+}
+
+/* Card List */
+.card-list .column-card {
+  text-align: left;
+  display: flex;
+  height: 215px;
+  cursor: pointer;
+  overflow-y: auto;
+  border-radius: 15px;
+  flex-direction: column;
+  padding: 15px 20px 20px;
+  transition: all 0.3s ease;
+  justify-content: space-evenly;
+  border: 2px solid var(--nav-color);
+}
+
+.card-list .card-details .title {
+  cursor: pointer;
+  text-align: left;
+  padding-bottom: 5px;
+  color: var(--dark-grey);
+  font-size: calc(18 / 16 * 1rem);
+}
+
+.card-list .card-details p {
+  cursor: pointer;
+  font-weight: 500;
+  padding-bottom: 10px;
+  color: var(--text-color);
+  font-size: calc(15 / 16 * 1rem);
+}
