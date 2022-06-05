@@ -32,6 +32,44 @@
   color: var(--dark-grey);
   cursor: pointer;
 }
-.add-column .add-column-btn i {
-  font-size: calc(14 / 16 * 1rem);
+
+/* Entitle column */
+.entitle-column {
+  display: flex;
+  flex-direction: column;
+}
+.entitle-column input {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  font-weight: 500;
+  font-size: 1rem;
+  border: none;
+  color: var(--dark-grey);
+  border-bottom: 2px solid var(--nav-color);
+  text-align: center;
+  margin-bottom: 10px;
+}
+.entitle-column input::placeholder {
+  color: var(--text-color);
+}
+.entitle-column .entitle-column-btn {
+  display: flex;
+  justify-content: center;
+}
+.entitle-column .entitle-column-btn button {
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 3px;
+  font-size: calc(16 / 16 * 1rem);
+  font-weight: 500;
+  color: var(--dark-grey);
+  border-radius: 8px;
+  width: 90px;
+  border: none;
+}
+
+.entitle-column .entitle-column-btn .add-column-btn {
+  background: var(--main-color);
+  color: var(--white);
 }
