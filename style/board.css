@@ -128,3 +128,11 @@
   color: var(--text-color);
   font-size: calc(15 / 16 * 1rem);
 }
+
+/* Note Card - Line */
+.card-list .line {
+  width: 100%;
+  height: 1px;
+  padding: 1px;
+  background: var(--nav-color);
+}
