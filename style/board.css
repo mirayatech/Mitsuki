@@ -35,9 +35,10 @@
 
 /* Entitle column */
 .entitle-column {
-  display: flex;
+  display: none;
   flex-direction: column;
 }
+
 .entitle-column input {
   width: 100%;
   max-width: 200px;
