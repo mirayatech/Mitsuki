@@ -163,6 +163,8 @@
 }
 
 .card-list .bottom-details .settings-menu {
+  opacity: 0;
+  pointer-events: none;
   z-index: 1;
   cursor: default;
   bottom: 1px;
