@@ -113,6 +113,23 @@
   border: 2px solid var(--nav-color);
 }
 
+.column-card:hover {
+  border: 2px solid var(--main-color);
+}
+
+.column-card::-webkit-scrollbar {
+  width: 3px;
+  height: 180px;
+}
+.column-card::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background: #f1f1f1;
+}
+.column-card::-webkit-scrollbar-thumb {
+  border-radius: 25px;
+  background: #e2e2e2;
+}
+
 .card-list .card-details .title {
   cursor: pointer;
   text-align: left;
@@ -122,6 +139,7 @@
 }
 
 .card-list .card-details p {
+  word-wrap: break-word;
   cursor: pointer;
   font-weight: 500;
   padding-bottom: 10px;

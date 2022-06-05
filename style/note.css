@@ -220,7 +220,7 @@
 
 .note-card .details p {
   cursor: pointer;
-
+  word-wrap: break-word;
   font-weight: 500;
   padding-bottom: 10px;
   color: var(--text-color);
