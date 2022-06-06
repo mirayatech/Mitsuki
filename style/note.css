@@ -289,6 +289,7 @@
   transform: scale(1);
 }
 .note-card .bottom-details .settings-menu li {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -299,6 +300,10 @@
   font-size: 1rem;
   justify-content: flex-start;
   padding: 5px 0;
+  transition: all 0.3s ease;
+}
+.note-card .bottom-details .settings-menu li:hover {
+  color: #5c5c5c;
 }
 .note-card .bottom-details .settings-menu li i {
   margin-right: 10px;

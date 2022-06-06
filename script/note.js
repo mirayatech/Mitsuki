@@ -38,7 +38,7 @@ closeIcon.addEventListener('click', () => {
 function showNotes() {
     document.querySelectorAll('.note-card').forEach((note) => note.remove())
 
-    notes.forEach((note) => {
+    notes.forEach((note, index) => {
         let liTag = `<li class="note-card">
                         <div class="details">
                             <h3 class="title">${note.title}</h3>
@@ -51,7 +51,7 @@ function showNotes() {
                                 <i onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
                             <ul class="settings-menu">
                                 <li class="edit-btn"><i class="fa-solid fa-pen"> </i> Edit </li>
-                                <li class="delete-btn"><i class="fa-solid fa-trash"> </i> Delete </li>
+                                <li onclick="deleteNote(${index})" class="delete-btn"><i class="fa-solid fa-trash"> </i> Delete </li>
                             </ul>
                         </div>
                      </div>
@@ -61,15 +61,21 @@ function showNotes() {
     })
 }
 
+function deleteNote(noteId) {
+    notes.splice(noteId, 1);
+    localStorage.setItem('notes', JSON.stringify(notes))
+    showNotes()
+}
+
 function showMenu(element) {
     element.parentElement.classList.add('show')
     document.addEventListener('click', (e) => {
+        // removing show class from the settings menu on document click
         if (e.target.tagName != 'I' || e.target != element) {
             element.parentElement.classList.remove('show')
         }
     })
 }
-
 // Add Note information to Local storage
 addNoteBtn.addEventListener('click', (event) => {
     event.preventDefault()
