@@ -28,9 +28,11 @@ addNote.addEventListener('click', () => {
     addNotePopup.classList.add('show')
 })
 
-// close the popup
+// Close the popup
 closeIcon.addEventListener('click', () => {
     addNotePopup.classList.remove('show')
+    titleTag.value = ''
+    descTag.value = ''
 })
 
 function showNotes() {
