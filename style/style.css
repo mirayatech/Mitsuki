@@ -38,6 +38,14 @@ button {
   outline: none;
 }
 
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(0.97);
+}
+
 /* Section - White background */
 .section {
   width: 100%;
