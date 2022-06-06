@@ -34,6 +34,8 @@ closeIcon.addEventListener('click', () => {
 })
 
 function showNotes() {
+    document.querySelectorAll('.note-card').forEach((note) => note.remove())
+
     notes.forEach((note) => {
         let liTag = ` <li class="note-card">
         <div class="details">
@@ -55,8 +57,6 @@ function showNotes() {
         addBox.insertAdjacentHTML('afterend', liTag)
     })
 }
-
-showNotes()
 
 // Add Note information to Local storage
 addNoteBtn.addEventListener('click', (event) => {
@@ -83,4 +83,5 @@ addNoteBtn.addEventListener('click', (event) => {
     localStorage.setItem('notes', JSON.stringify(notes))
 
     closeIcon.click()
+    showNotes()
 })
