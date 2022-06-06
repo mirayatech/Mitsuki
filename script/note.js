@@ -1,12 +1,10 @@
 const addNote = document.querySelector('.circle')
-const addBox = document.querySelector(".add-note")
+const addBox = document.querySelector('.add-note')
 const closeIcon = document.querySelector('header i')
 const addNoteBtn = document.querySelector('.note-page .popup-btn')
 const addNotePopup = document.querySelector('.note-page .popup-box')
 const titleTag = document.querySelector('.note-page #title-description')
 const descTag = document.querySelector('.note-page #description-input')
-
-
 
 const months = [
     'January',
@@ -52,14 +50,13 @@ function showNotes() {
                 </ul>
             </div>
         </div>
-    </li> `;
+    </li> `
 
-        addBox.insertAdjacentHTML("afterend", liTag);
-    });
-
+        addBox.insertAdjacentHTML('afterend', liTag)
+    })
 }
 
-showNotes();
+showNotes()
 
 // Add Note information to Local storage
 addNoteBtn.addEventListener('click', (event) => {
