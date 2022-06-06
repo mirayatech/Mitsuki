@@ -6,7 +6,6 @@ const addNotePopup = document.querySelector('.note-page .popup-box')
 const titleTag = document.querySelector('.note-page #title-description')
 const descTag = document.querySelector('.note-page #description-input')
 
-
 const months = [
     'January',
     'Febuary',
@@ -36,7 +35,6 @@ closeIcon.addEventListener('click', () => {
     descTag.value = ''
 })
 
-
 function showNotes() {
     document.querySelectorAll('.note-card').forEach((note) => note.remove())
 
@@ -57,16 +55,19 @@ function showNotes() {
                             </ul>
                         </div>
                      </div>
-            </li> `;
+            </li> `
 
         addBox.insertAdjacentHTML('afterend', liTag)
     })
-
-
 }
 
 function showMenu(element) {
-    element.parentElement.classList.add("show");
+    element.parentElement.classList.add('show')
+    document.addEventListener('click', (e) => {
+        if (e.target.tagName != 'I' || e.target != element) {
+            element.parentElement.classList.remove('show')
+        }
+    })
 }
 
 // Add Note information to Local storage
