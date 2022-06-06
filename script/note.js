@@ -6,6 +6,7 @@ const addNotePopup = document.querySelector('.note-page .popup-box')
 const titleTag = document.querySelector('.note-page #title-description')
 const descTag = document.querySelector('.note-page #description-input')
 
+
 const months = [
     'January',
     'Febuary',
@@ -35,29 +36,37 @@ closeIcon.addEventListener('click', () => {
     descTag.value = ''
 })
 
+
 function showNotes() {
     document.querySelectorAll('.note-card').forEach((note) => note.remove())
 
     notes.forEach((note) => {
-        let liTag = ` <li class="note-card">
-        <div class="details">
-            <h3 class="title">${note.title}</h3>
-            <p>${note.description}</p>
-        </div>
-        <div class="line"></div>
-        <div class="bottom-details">
-            <span class="date">${note.date}</span>
-            <div class="settings"><i class="fa-solid fa-ellipsis" onclick="showMenu(this)"></i>
-                <ul class="settings-menu">
-                    <li class="edit-btn"> <i class="fa-solid fa-pen"> </i> Edit </li>
-                    <li class="delete-btn"> <i class="fa-solid fa-trash"> </i> Delete </li>
-                </ul>
-            </div>
-        </div>
-    </li> `
+        let liTag = `<li class="note-card">
+                        <div class="details">
+                            <h3 class="title">${note.title}</h3>
+                            <p>${note.description}</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="bottom-details">
+                            <span class="date">${note.date}</span>
+                            <div class="settings">
+                                <i onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
+                            <ul class="settings-menu">
+                                <li class="edit-btn"><i class="fa-solid fa-pen"> </i> Edit </li>
+                                <li class="delete-btn"><i class="fa-solid fa-trash"> </i> Delete </li>
+                            </ul>
+                        </div>
+                     </div>
+            </li> `;
 
         addBox.insertAdjacentHTML('afterend', liTag)
     })
+
+
+}
+
+function showMenu(element) {
+    element.parentElement.classList.add("show");
 }
 
 // Add Note information to Local storage
@@ -74,10 +83,6 @@ addNoteBtn.addEventListener('click', (event) => {
         title: noteTitle,
         description: noteDesc,
         date: `${month} ${day}, ${year}`,
-    }
-
-    if (noteTitle || noteDesc) {
-        console.log(noteInfo)
     }
 
     notes.push(noteInfo)
