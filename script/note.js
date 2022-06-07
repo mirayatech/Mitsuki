@@ -68,6 +68,8 @@ function showNotes() {
 }
 
 function deleteNote(noteId) {
+    let confirmDeleteNote = confirm('Are you sure you want to delete this note?')
+    if (!confirmDeleteNote) return
     notes.splice(noteId, 1)
     localStorage.setItem('notes', JSON.stringify(notes))
     showNotes()
