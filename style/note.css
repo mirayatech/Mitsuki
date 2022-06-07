@@ -77,13 +77,14 @@
 .note-page .popup #popup-form button {
   cursor: pointer;
   margin: 15px auto 0 auto;
-  padding: 8px 0;
+  padding: 10px 0;
+  font-size: 1rem;
   border-radius: 5px;
   border: none;
   font-weight: 500;
   background: var(--main-color);
   color: var(--white);
-  width: 100px;
+  width: 100%;
 }
 
 .note-page .popup #popup-form .row.title {
