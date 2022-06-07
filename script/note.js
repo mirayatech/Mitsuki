@@ -2,8 +2,8 @@ const addNote = document.querySelector('.circle')
 const addBox = document.querySelector('.add-note')
 const closeIcon = document.querySelector('header i')
 const addNoteBtn = document.querySelector('.note-page .popup-btn')
-const popupTitle = document.querySelector('.note-page .popup-title')
 const addNotePopup = document.querySelector('.note-page .popup-box')
+const popupTitle = document.querySelector('.note-page .popup-title')
 const titleTag = document.querySelector('.note-page #title-description')
 const descTag = document.querySelector('.note-page #description-input')
 
@@ -23,19 +23,19 @@ const months = [
 ]
 
 const notes = JSON.parse(localStorage.getItem('notes') || '[]')
-
+// note updated, isUpdate value set to false, because user user try to add new note
 let isUpdate = false,
     updateId
 
 // Show popup
 addNote.addEventListener('click', () => {
-    isUpdate = false
     titleTag.focus()
     addNotePopup.classList.add('show')
 })
 
 // Close the popup
 closeIcon.addEventListener('click', () => {
+    isUpdate = false
     addNotePopup.classList.remove('show')
     titleTag.value = ''
     descTag.value = ''
@@ -56,7 +56,7 @@ function showNotes() {
                             <div class="settings">
                                 <i onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
                             <ul class="settings-menu">
-                                <li onclick="updateNote(${index}, '${note.title}', '${note.description}')" class="edit-btn"><i class="fa-solid fa-pen"> </i> Edit </li>
+                                <li onclick="updateNote(${index}, '${note.title}', '${note.description}')"  class="edit-btn"><i class="fa-solid fa-pen"> </i> Edit </li>
                                 <li onclick="deleteNote(${index})" class="delete-btn"><i class="fa-solid fa-trash"> </i> Delete </li>
                             </ul>
                         </div>
@@ -65,14 +65,6 @@ function showNotes() {
 
         addBox.insertAdjacentHTML('afterend', liTag)
     })
-}
-
-function deleteNote(noteId) {
-    let confirmDeleteNote = confirm('Are you sure you want to delete this note?')
-    if (!confirmDeleteNote) return
-    notes.splice(noteId, 1)
-    localStorage.setItem('notes', JSON.stringify(notes))
-    showNotes()
 }
 
 function showMenu(element) {
@@ -85,14 +77,20 @@ function showMenu(element) {
     })
 }
 
+function deleteNote(noteId) {
+    notes.splice(noteId, 1)
+    localStorage.setItem('notes', JSON.stringify(notes))
+    showNotes()
+}
+
 function updateNote(noteId, title, desc) {
     isUpdate = true
     updateId = noteId
     addNote.click()
     titleTag.value = title
     descTag.value = desc
-    popupTitle.innerText = 'Update Note'
-    addNoteBtn.innerText = 'Update note'
+    addNoteBtn.innerText = 'Update Note'
+    popupTitle.innerText = 'Update a Note'
     console.log(noteId, title, desc)
 }
 
@@ -116,10 +114,11 @@ addNoteBtn.addEventListener('click', (event) => {
         notes.push(noteInfo)
     } else {
         isUpdate = false
-        notes[updateId] = noteInfo // updating specifed note
+        notes[updateId] = noteInfo //updating specifed note
     }
 
     localStorage.setItem('notes', JSON.stringify(notes))
+
     closeIcon.click()
     showNotes()
 })
