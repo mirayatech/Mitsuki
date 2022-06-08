@@ -237,12 +237,12 @@
   transform: scale(0.99);
 }
 
-.entitle-column .entitle-column-btn .add-column-btn {
+.entitle-column .entitle-column-btn .add-btn {
   background: var(--main-color);
   color: var(--white);
 }
 
-.entitle-column .entitle-column-btn .add-column-btn:hover {
+.entitle-column .entitle-column-btn .add-btn:hover {
   background: #82dbb2;
 }
 
