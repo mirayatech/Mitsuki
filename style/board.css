@@ -177,6 +177,10 @@
   display: none;
 }
 
+.add-column.hide {
+  position: fixed;
+}
+
 .add-column .add-column-btn {
   padding: 5px;
   width: 200px;
