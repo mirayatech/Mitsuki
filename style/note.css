@@ -59,12 +59,18 @@
 }
 
 .note-page .popup .content header i {
-  font-size: calc(22 / 16 * 1rem);
+  font-size: calc(18 / 16 * 1rem);
   transform: rotate(45deg);
   position: absolute;
-  left: 330px;
-  top: -10px;
+  right: -15px;
+  top: -15px;
   cursor: pointer;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.note-page .popup .content header i:hover {
+  color: #5c5c5c;
 }
 
 /* Content - Form */
@@ -87,6 +93,10 @@
   width: 100%;
 }
 
+.note-page .popup #popup-form button:hover {
+  background: #82dbb2;
+}
+
 .note-page .popup #popup-form .row.title {
   display: flex;
   flex-direction: column;
@@ -99,7 +109,13 @@
   height: 30px;
   border: 1px solid var(--nav-color);
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
+
+.note-page .popup #popup-form .row.title input:focus {
+  border: 1px solid var(--main-color);
+}
+
 .note-page .popup #popup-form .row.title label,
 .note-page .popup #popup-form .row.description label {
   font-weight: 500;
@@ -117,6 +133,11 @@
   height: 130px;
   border: 1px solid var(--nav-color);
   border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.note-page .popup #popup-form .row.description textarea:focus {
+  border: 1px solid var(--main-color);
 }
 
 /* Note Page */
