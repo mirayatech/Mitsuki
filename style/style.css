@@ -42,10 +42,6 @@ button {
   transition: all 0.3s ease;
 }
 
-button:hover {
-  transform: scale(0.98);
-}
-
 /* Section - White background */
 .section {
   width: 100%;
