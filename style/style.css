@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -61,13 +61,14 @@ button:hover {
 .navbar {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding-bottom: 10px;
+  justify-content: space-between;
   border-bottom: 2px solid var(--line-color);
 }
 
 .navbar .logo h2 {
+  cursor: default;
   color: var(--dark-grey);
   font-size: calc(30 / 16 * 1rem);
 }
@@ -81,8 +82,8 @@ button:hover {
   padding: 0 30px;
   font-weight: 500;
   color: var(--nav-color);
-  font-size: calc(20 / 16 * 1rem);
   transition: all 0.3s ease;
+  font-size: calc(20 / 16 * 1rem);
 }
 
 .nav-item .item-list .item-links.active {
@@ -120,13 +121,13 @@ button:hover {
   cursor: pointer;
   transition: 0.4s;
   position: absolute;
-  background-color: #ccc;
   -webkit-transition: 0.4s;
+  background-color: var(--main-color);
 }
 
 .slider:before {
   left: 4px;
-  content: "";
+  content: '';
   bottom: 4px;
   width: 26px;
   height: 26px;
@@ -137,7 +138,7 @@ button:hover {
 }
 
 input:checked + .slider {
-  background-color: var(--main-color);
+  background-color: var(--dark-grey);
 }
 
 input:focus + .slider {
