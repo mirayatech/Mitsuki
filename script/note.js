@@ -66,6 +66,7 @@ function showNotes() {
         addBox.insertAdjacentHTML('afterend', liTag)
     })
 }
+
 showNotes()
 
 function showMenu(element) {
