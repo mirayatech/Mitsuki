@@ -3,7 +3,8 @@
   --nav-color: #bfc5cd;
   --line-color: #f4f4f4;
   --dark-grey: #1e2739;
-  --text-color: #797979;
+  --medium-grey: #e6e6e6;
+  --text-color: #8d8d8d;
   --body-color: #f6f8fa;
   --main-color: #87e6ba;
 }
@@ -187,6 +188,10 @@
   cursor: pointer;
 }
 
+.add-column .add-column-btn:hover {
+  background: var(--medium-grey);
+}
+
 /* Entitle column */
 .entitle-column.show {
   opacity: 1;
@@ -228,9 +233,17 @@
   border: none;
 }
 
+.entitle-column .entitle-column-btn button:hover {
+  transform: scale(0.99);
+}
+
 .entitle-column .entitle-column-btn .add-column-btn {
   background: var(--main-color);
   color: var(--white);
+}
+
+.entitle-column .entitle-column-btn .add-column-btn:hover {
+  background: #82dbb2;
 }
 
 /* Add card*/
