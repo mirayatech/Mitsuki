@@ -172,6 +172,10 @@
 }
 
 /* Add Column */
+.add-column.hide {
+  display: none;
+}
+
 .add-column .add-column-btn {
   padding: 5px;
   width: 200px;
@@ -184,14 +188,18 @@
 }
 
 /* Entitle column */
+.entitle-column.show {
+  opacity: 1;
+  pointer-events: all;
+}
 .entitle-column {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
   flex-direction: column;
 }
 
 .entitle-column input {
   width: 100%;
-  max-width: 200px;
   margin: 0 auto;
   font-weight: 500;
   font-size: 1rem;
