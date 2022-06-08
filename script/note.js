@@ -66,6 +66,7 @@ function showNotes() {
         addBox.insertAdjacentHTML('afterend', liTag)
     })
 }
+showNotes()
 
 function showMenu(element) {
     element.parentElement.classList.add('show')
@@ -118,7 +119,6 @@ addNoteBtn.addEventListener('click', (event) => {
     }
 
     localStorage.setItem('notes', JSON.stringify(notes))
-
-    closeIcon.click()
     showNotes()
+    closeIcon.click()
 })
