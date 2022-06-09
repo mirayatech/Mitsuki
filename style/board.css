@@ -193,7 +193,7 @@
 }
 
 .add-column .add-column-btn:hover {
-  background: var(--medium-grey);
+  background: #ebebeb;
 }
 
 /* Entitle column */
