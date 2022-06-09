@@ -274,6 +274,10 @@
   cursor: pointer;
 }
 
+.add-card button:hover {
+  transform: scale(0.98);
+}
+
 /* Card List */
 .card-list .column-card {
   text-align: left;
