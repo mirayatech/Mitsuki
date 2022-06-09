@@ -136,10 +136,6 @@
   border: 1px solid var(--nav-color);
 }
 
-.note-page .popup #popup-form .row.description textarea:focus {
-  border: 1px solid var(--main-color);
-}
-
 /* Note Page */
 .note-page.show {
   gap: 100px;
