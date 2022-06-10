@@ -167,7 +167,6 @@
   height: auto;
   display: flex;
   max-width: 1800px;
-  padding-top: 50px;  
   justify-content: space-evenly;
 }
 
@@ -179,7 +178,7 @@
 
 .column-wrapper .column-title {
   text-align: center;
-  font-size: calc(25 / 16 * 1rem);
+  font-size: calc(22 / 16 * 1rem);
   color: var(--dark-grey);
 }
 
@@ -191,11 +190,11 @@
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .column-wrapper .first-column-button:hover {
-transform: scale(.98);
+  transform: scale(0.98);
 }
 
 /* Card List */

@@ -1,159 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/note.css" />
+    <link rel="stylesheet" href="./style/board.css" />
+    <link rel="stylesheet" href="./style/introduction.css" />
+    <title>Mitsuki</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="stylesheet" href="./style/note.css" />
-  <link rel="stylesheet" href="./style/board.css" />
-  <link rel="stylesheet" href="./style/introduction.css" />
-  <title>Mitsuki</title>
-</head>
-
-<body>
-  <!-- Section - White Background -->
-  <section class="section">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">
-        <h2>Mitsuki</h2>
-      </div>
-      <div class="nav-item">
-        <ul class="item-list">
-          <li class="item-links introduction-link active">How it works?</li>
-          <li class="item-links boards-link">Boards</li>
-          <li class="item-links notes-link">Notes</li>
-        </ul>
-      </div>
-
-      <!-- Dark & light mode button -->
-      <div class="dark-light-mode">
-        <label class="switch-btn">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-      </div>
-    </nav>
-
-    <!-- Introduction -->
-    <div class="introduction"></div>
-
-    <!-- Note page -->
-    <div class="note-page">
-      <!--Note Popup Module-->
-      <div class="popup-box">
-        <div class="popup">
-          <div class="content">
-            <header>
-              <p class="popup-title">Add a new Note</p>
-              <i class="fa-solid fa-plus"> </i>
-            </header>
-            <form action="#" id="popup-form">
-              <div class="row title">
-                <label> Title </label>
-                <input type="text" id="title-description" />
-              </div>
-              <div class="row description">
-                <label> Description </label>
-                <textarea name="Description" id="description-input" cols="30" rows="10"></textarea>
-              </div>
-              <button class="popup-btn">Add Note</button>
-            </form>
-          </div>
+  <body>
+    <!-- Section - White Background -->
+    <section class="section">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Mitsuki</h2>
         </div>
-      </div>
-      <!-- Add Note -->
-      <li class="add-note">
-        <div class="circle">
-          <i class="fa-solid fa-plus"></i>
-        </div>
-        <p>Add new note</p>
-      </li>
-    </div>
-
-    <!-- Board Page -->
-    <div class="board-page">
-      <!--Board Popup module-->
-      <div class="popup-box">
-        <div class="popup">
-          <div class="content">
-            <header>
-              <p>Add a Card</p>
-              <i class="fa-solid fa-plus"> </i>
-            </header>
-            <form action="#" id="popup-form">
-              <div class="row title">
-                <label> Title </label>
-                <input type="text" id="title-description" />
-              </div>
-              <div class="row description">
-                <label> Description </label>
-                <textarea name="Description" id="description-input" cols="30" rows="10"></textarea>
-              </div>
-              <button class="popup-btn">Add Card</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Column Wrapper -->
-      <div class="column-wrapper">
-        <!-- First column - Tasks -->
-        <div class="first-column column">
-          <h3 class="first-column-title column-title">Tasks</h3>
-          <button class="first-column-button">
-            <i class="fa-solid fa-plus"></i> New card
-          </button>
-          <ul class="first-column-list card-list">
-            <li class="card">
-              <div class="card-details">
-                  <h3 class="title">Card Title</h3>
-                  <p>Lorem ipsum, dolor sit amet conse.
-                  </p>
-              </div>
-              <div class="line"></div>
-              <div class="bottom-details">
-                  <span class="date">June 4, 2022</span>
-                  <div class="settings"><i class="fa-solid fa-ellipsis" onclick="showMenu(this)"></i>
-                      <ul class="settings-menu">
-                          <li class="edit-btn"> <i class="fa-solid fa-pen"> </i> Edit </li>
-                          <li class="delete-btn"> <i class="fa-solid fa-trash"> </i> Delete </li>
-                      </ul>
-                  </div>
-              </div>
-          </li>
+        <div class="nav-item">
+          <ul class="item-list">
+            <li class="item-links introduction-link active">How it works?</li>
+            <li class="item-links boards-link">Boards</li>
+            <li class="item-links notes-link">Notes</li>
           </ul>
         </div>
-        <!-- Second column - not started -->
-        <div class="second-column column">
-          <h3 class="second-column-title column-title">Not started</h3>
-          <ul class="second-column-list card-list"></ul>
+
+        <!-- Dark & light mode button -->
+        <div class="dark-light-mode">
+          <label class="switch-btn">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
         </div>
-        <!-- Third column - in progress -->
-        <div class="third-column column">
-          <h3 class="third-column-title column-title">In progress</h3>
-          <ul class="third-column-list card-list"></ul>
+      </nav>
+
+      <!-- Introduction -->
+      <div class="introduction"></div>
+
+      <!-- Note page -->
+      <div class="note-page">
+        <!--Note Popup Module-->
+        <div class="popup-box">
+          <div class="popup">
+            <div class="content">
+              <header>
+                <p class="popup-title">Add a new Note</p>
+                <i class="fa-solid fa-plus"> </i>
+              </header>
+              <form action="#" id="popup-form">
+                <div class="row title">
+                  <label> Title </label>
+                  <input type="text" id="title-description" />
+                </div>
+                <div class="row description">
+                  <label> Description </label>
+                  <textarea
+                    name="Description"
+                    id="description-input"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                </div>
+                <button class="popup-btn">Add Note</button>
+              </form>
+            </div>
+          </div>
         </div>
-        <!-- Fourth column - completed -->
-        <div class="fourth-column column">
-          <h3 class="fourth-column-title column-title">Completed</h3>
-          <ul class="fourth-column-list card-list"></ul>
+        <!-- Add Note -->
+        <li class="add-note">
+          <div class="circle">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <p>Add new note</p>
+        </li>
+      </div>
+
+      <!-- Board Page -->
+      <div class="board-page">
+        <!--Board Popup module-->
+        <div class="popup-box">
+          <div class="popup">
+            <div class="content">
+              <header>
+                <p>Add a Card</p>
+                <i class="fa-solid fa-plus"> </i>
+              </header>
+              <form action="#" id="popup-form">
+                <div class="row title">
+                  <label> Title </label>
+                  <input type="text" id="title-description" />
+                </div>
+                <div class="row description">
+                  <label> Description </label>
+                  <textarea
+                    name="Description"
+                    id="description-input"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                </div>
+                <button class="popup-btn">Add Card</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Column Wrapper -->
+        <div class="column-wrapper">
+          <!-- First column - Tasks -->
+          <div class="first-column column">
+            <h3 class="first-column-title column-title">Tasks</h3>
+            <button class="first-column-button">
+              <i class="fa-solid fa-plus"></i> New card
+            </button>
+            <ul class="first-column-list card-list">
+              <li class="card">
+                <div class="card-details">
+                  <h3 class="title">Card Title</h3>
+                  <p>Lorem ipsum, dolor sit amet conse.</p>
+                </div>
+                <div class="line"></div>
+                <div class="bottom-details">
+                  <span class="date">June 4, 2022</span>
+                  <div class="settings">
+                    <i
+                      class="fa-solid fa-ellipsis"
+                      onclick="showMenu(this)"
+                    ></i>
+                    <ul class="settings-menu">
+                      <li class="edit-btn">
+                        <i class="fa-solid fa-pen"> </i> Edit
+                      </li>
+                      <li class="delete-btn">
+                        <i class="fa-solid fa-trash"> </i> Delete
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Second column - not started -->
+          <div class="second-column column">
+            <h3 class="second-column-title column-title">Not started</h3>
+            <ul class="second-column-list card-list"></ul>
+          </div>
+          <!-- Third column - in progress -->
+          <div class="third-column column">
+            <h3 class="third-column-title column-title">In progress</h3>
+            <ul class="third-column-list card-list"></ul>
+          </div>
+          <!-- Fourth column - completed -->
+          <div class="fourth-column column">
+            <h3 class="fourth-column-title column-title">Completed</h3>
+            <ul class="fourth-column-list card-list"></ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Script -->
-  <script src="./script/utilities.js"></script>
-  <script src="./script/note.js"></script>
-  <script src="./script/board.js"></script>
-</body>
-
+    <!-- Script -->
+    <script src="./script/utilities.js"></script>
+    <script src="./script/note.js"></script>
+    <script src="./script/board.js"></script>
+  </body>
 </html>
