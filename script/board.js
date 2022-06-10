@@ -36,7 +36,7 @@ cardPopupCloseIcon.addEventListener('click', () => {
 
 function showCards() {
   document.querySelectorAll('.card').forEach((card) => card.remove())
-  cards.forEach((card) => {
+  cards.forEach((card, index) => {
     let liCardTag = `<li class="card">
     <div class="card-details">
       <h3 class="title">${card.title}</h3>
@@ -54,7 +54,7 @@ function showCards() {
           <li class="edit-btn">
             <i class="fa-solid fa-pen"> </i> Edit
           </li>
-          <li class="delete-btn">
+          <li onclick="deleteCard(${index})" class="delete-btn">
             <i class="fa-solid fa-trash"> </i> Delete
           </li>
         </ul>
@@ -77,6 +77,12 @@ function showMenu(element) {
       element.parentElement.classList.remove('show')
     }
   })
+}
+
+function deleteCard(noteId) {
+  cards.splice(noteId, 1)
+  localStorage.setItem('cards', JSON.stringify(cards))
+  showCards()
 }
 
 addCardPopupModuleBtn.addEventListener('click', (event) => {
