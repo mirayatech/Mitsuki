@@ -161,6 +161,17 @@
   background: #e6e6e6;
 }
 
+/* Column Wrapper */
+.column-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  max-width: 1800px;
+  padding-top: 50px;  
+  justify-content: space-evenly;
+
+}
+
 
 
 /* Card List */
