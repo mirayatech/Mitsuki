@@ -134,7 +134,7 @@
   display: block;
   overflow-y: auto;
   max-width: 1800px;
-  padding-top: 40px;
+  margin-top: 30px;
 }
 
 /* Board Page */
