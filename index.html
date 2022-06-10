@@ -106,29 +106,45 @@
       <!-- Column Wrapper -->
       <div class="column-wrapper">
         <!-- First column - Tasks -->
-        <div class="first-column">
-          <h3 class="first-column-title">Tasks</h3>
+        <div class="first-column column">
+          <h3 class="first-column-title column-title">Tasks</h3>
           <button class="first-column-button">
             <i class="fa-solid fa-plus"></i> New card
           </button>
-          <ul class="first-column-list">
-            <li class="card"></li>
+          <ul class="first-column-list card-list">
+            <li class="card">
+              <div class="card-details">
+                  <h3 class="title">Card Title</h3>
+                  <p>Lorem ipsum, dolor sit amet consectur adipisig boli somin kol elit.
+                  </p>
+              </div>
+              <div class="line"></div>
+              <div class="bottom-details">
+                  <span class="date">June 4, 2022</span>
+                  <div class="settings"><i class="fa-solid fa-ellipsis" onclick="showMenu(this)"></i>
+                      <ul class="settings-menu">
+                          <li class="edit-btn"> <i class="fa-solid fa-pen"> </i> Edit </li>
+                          <li class="delete-btn"> <i class="fa-solid fa-trash"> </i> Delete </li>
+                      </ul>
+                  </div>
+              </div>
+          </li>
           </ul>
         </div>
         <!-- Second column - not started -->
-        <div class="second-column">
-          <h3 class="second-column-title">Not Started</h3>
-          <ul class="second-column-list"></ul>
+        <div class="second-column column">
+          <h3 class="second-column-title column-title">Not Started</h3>
+          <ul class="second-column-list card-list"></ul>
         </div>
         <!-- Third column - in progress -->
-        <div class="third-column">
-          <h3 class="third-column-title">In Progress</h3>
-          <ul class="third-column-list"></ul>
+        <div class="third-column column">
+          <h3 class="third-column-title column-title">In Progress</h3>
+          <ul class="third-column-list card-list"></ul>
         </div>
         <!-- Fourth column - completed -->
-        <div class="fourth-column">
-          <h3 class="fourth-column-title">Completed</h3>
-          <ul class="fourth-column-list"></ul>
+        <div class="fourth-column column">
+          <h3 class="fourth-column-title column-title">Completed</h3>
+          <ul class="fourth-column-list card-list"></ul>
         </div>
       </div>
     </div>
