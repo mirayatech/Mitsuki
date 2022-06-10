@@ -183,7 +183,7 @@
 }
 
 .column-wrapper .first-column-button {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   padding: 5px;
   margin: 10px 0 20px 0;
@@ -191,6 +191,10 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.column-wrapper .first-column-button i{
+font-size: calc(14 / 16 * 1rem);
 }
 
 .column-wrapper .first-column-button:hover {
