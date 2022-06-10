@@ -134,7 +134,7 @@
   display: block;
   overflow-y: auto;
   max-width: 1800px;
-  padding-top: 50px;
+  padding-top: 40px;
 }
 
 /* Board Page */
@@ -145,7 +145,6 @@
   display: none;
   overflow-y: auto;
   max-width: 1800px;
-  padding-top: 50px;
 }
 
 .board-page::-webkit-scrollbar {
