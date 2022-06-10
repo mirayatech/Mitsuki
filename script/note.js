@@ -8,44 +8,44 @@ const titleTag = document.querySelector('.note-page #title-description')
 const descTag = document.querySelector('.note-page #description-input')
 
 const months = [
-    'January',
-    'Febuary',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
 const notes = JSON.parse(localStorage.getItem('notes') || '[]')
 // note updated, isUpdate value set to false, because user user try to add new note
 let isUpdate = false,
-    updateId
+  updateId
 
 // Show popup
 addNote.addEventListener('click', () => {
-    titleTag.focus()
-    addNotePopup.classList.add('show')
+  titleTag.focus()
+  addNotePopup.classList.add('show')
 })
 
 // Close the popup
 closeIcon.addEventListener('click', () => {
-    isUpdate = false
-    addNotePopup.classList.remove('show')
-    titleTag.value = ''
-    descTag.value = ''
+  isUpdate = false
+  addNotePopup.classList.remove('show')
+  titleTag.value = ''
+  descTag.value = ''
 })
 
 function showNotes() {
-    document.querySelectorAll('.note-card').forEach((note) => note.remove())
+  document.querySelectorAll('.note-card').forEach((note) => note.remove())
 
-    notes.forEach((note, index) => {
-        let liTag = `<li class="note-card">
+  notes.forEach((note, index) => {
+    let liTag = `<li class="note-card">
                         <div class="details">
                             <h3 class="title">${note.title}</h3>
                             <p>${note.description}</p>
@@ -63,63 +63,63 @@ function showNotes() {
                      </div>
             </li> `
 
-        addBox.insertAdjacentHTML('afterend', liTag)
-    })
+    addBox.insertAdjacentHTML('afterend', liTag)
+  })
 }
 
 showNotes()
 
 function showMenu(element) {
-    element.parentElement.classList.add('show')
-    document.addEventListener('click', (e) => {
-        // removing show class from the settings menu on document click
-        if (e.target.tagName != 'I' || e.target != element) {
-            element.parentElement.classList.remove('show')
-        }
-    })
+  element.parentElement.classList.add('show')
+  document.addEventListener('click', (e) => {
+    // removing show class from the settings menu on document click
+    if (e.target.tagName != 'I' || e.target != element) {
+      element.parentElement.classList.remove('show')
+    }
+  })
 }
 
 function deleteNote(noteId) {
-    notes.splice(noteId, 1)
-    localStorage.setItem('notes', JSON.stringify(notes))
-    showNotes()
+  notes.splice(noteId, 1)
+  localStorage.setItem('notes', JSON.stringify(notes))
+  showNotes()
 }
 
 function updateNote(noteId, title, desc) {
-    isUpdate = true
-    updateId = noteId
-    addNote.click()
-    titleTag.value = title
-    descTag.value = desc
-    addNoteBtn.innerText = 'Update Note'
-    popupTitle.innerText = 'Update a Note'
-    console.log(noteId, title, desc)
+  isUpdate = true
+  updateId = noteId
+  addNote.click()
+  titleTag.value = title
+  descTag.value = desc
+  addNoteBtn.innerText = 'Update Note'
+  popupTitle.innerText = 'Update a Note'
+  console.log(noteId, title, desc)
 }
 
 // Add Note information to Local storage
 addNoteBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    let noteTitle = titleTag.value
-    let noteDesc = descTag.value
-    // Get the date
-    let dateObj = new Date()
-    let month = months[dateObj.getMonth()]
-    let day = dateObj.getDate()
-    let year = dateObj.getFullYear()
-    let noteInfo = {
-        title: noteTitle,
-        description: noteDesc,
-        date: `${month} ${day}, ${year}`,
-    }
+  event.preventDefault()
+  let noteTitle = titleTag.value
+  let noteDesc = descTag.value
+  // Get the date
+  let dateObj = new Date()
+  let month = months[dateObj.getMonth()]
+  let day = dateObj.getDate()
+  let year = dateObj.getFullYear()
+  let noteInfo = {
+    title: noteTitle,
+    description: noteDesc,
+    date: `${month} ${day}, ${year}`,
+  }
 
-    if (!isUpdate) {
-        notes.push(noteInfo)
-    } else {
-        isUpdate = false
-        notes[updateId] = noteInfo //updating specifed note
-    }
+  if (!isUpdate) {
+    notes.push(noteInfo)
+  } else {
+    isUpdate = false
+    notes[updateId] = noteInfo //updating specifed note
+  }
 
-    localStorage.setItem('notes', JSON.stringify(notes))
-    showNotes()
-    closeIcon.click()
+  localStorage.setItem('notes', JSON.stringify(notes))
+  showNotes()
+  closeIcon.click()
 })

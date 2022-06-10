@@ -1,127 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/note.css" />
     <link rel="stylesheet" href="./style/board.css" />
     <link rel="stylesheet" href="./style/introduction.css" />
     <title>Mitsuki</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <!-- Section - White Background -->
     <section class="section">
-        <!-- Navbar -->
-        <nav class="navbar">
-            <div class="logo">
-                <h2>Mitsuki</h2>
-            </div>
-            <div class="nav-item">
-                <ul class="item-list">
-                    <li class="item-links introduction-link active">How it works?</li>
-                    <li class="item-links boards-link">Boards</li>
-                    <li class="item-links notes-link">Notes</li>
-                </ul>
-            </div>
-            <!-- Dark & light mode button -->
-            <div class="dark-light-mode">
-                <label class="switch-btn">
-                    <input type="checkbox" />
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </nav>
-
-        <!-- Introduction -->
-        <div class="introduction"></div>
-
-        <!-- Note page -->
-        <div class="note-page">
-            <!-- Pop Up -->
-            <div class="popup-box">
-                <div class="popup">
-                    <div class="content">
-                        <header>
-                            <p class="popup-title">Add a new Note</p>
-                            <i class="fa-solid fa-plus"> </i>
-                        </header>
-                        <form action="#" id="popup-form">
-                            <div class="row title">
-                                <label> Title </label>
-                                <input type="text" id="title-description" />
-                            </div>
-                            <div class="row description">
-                                <label> Description </label>
-                                <textarea name="Description" id="description-input" cols="30" rows="10"></textarea>
-                            </div>
-                            <button class="popup-btn">Add Note</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <!-- Add Note -->
-            <li class="add-note">
-                <div class="circle">
-                    <i class="fa-solid fa-plus"></i>
-                </div>
-                <p>Add new note</p>
-            </li>
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Mitsuki</h2>
         </div>
+        <div class="nav-item">
+          <ul class="item-list">
+            <li class="item-links introduction-link active">How it works?</li>
+            <li class="item-links boards-link">Boards</li>
+            <li class="item-links notes-link">Notes</li>
+          </ul>
+        </div>
+        <!-- Dark & light mode button -->
+        <div class="dark-light-mode">
+          <label class="switch-btn">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </nav>
 
+      <!-- Introduction -->
+      <div class="introduction"></div>
 
-
-
-        <!-- Board Page -->
-        <div class="board-page">
-            <!-- Pop Up -->
-            <div class="popup-box">
-                <div class="popup">
-                    <div class="content">
-                        <header>
-                            <p>Add a Card</p>
-                            <i class="fa-solid fa-plus"> </i>
-                        </header>
-                        <form action="#" id="popup-form">
-                            <div class="row title">
-                                <label> Title </label>
-                                <input type="text" id="title-description" />
-                            </div>
-                            <div class="row description">
-                                <label> Description </label>
-                                <textarea name="Description" id="description-input" cols="30" rows="10"></textarea>
-                            </div>
-                            <button class="popup-btn">Add Card</button>
-                        </form>
-                    </div>
+      <!-- Note page -->
+      <div class="note-page">
+        <!-- Pop Up -->
+        <div class="popup-box">
+          <div class="popup">
+            <div class="content">
+              <header>
+                <p class="popup-title">Add a new Note</p>
+                <i class="fa-solid fa-plus"> </i>
+              </header>
+              <form action="#" id="popup-form">
+                <div class="row title">
+                  <label> Title </label>
+                  <input type="text" id="title-description" />
                 </div>
+                <div class="row description">
+                  <label> Description </label>
+                  <textarea
+                    name="Description"
+                    id="description-input"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                </div>
+                <button class="popup-btn">Add Note</button>
+              </form>
             </div>
-            <!-- Add Column -->
-            <div class="column-wrapper">
-                <div class="add-column">
-                    <button class="add-column-btn">
-                        <i class="fa-solid fa-plus"></i> Add new column
-                    </button>
+          </div>
+        </div>
+        <!-- Add Note -->
+        <li class="add-note">
+          <div class="circle">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <p>Add new note</p>
+        </li>
+      </div>
+
+      <!-- Board Page -->
+      <div class="board-page">
+        <!-- Pop Up -->
+        <div class="popup-box">
+          <div class="popup">
+            <div class="content">
+              <header>
+                <p>Add a Card</p>
+                <i class="fa-solid fa-plus"> </i>
+              </header>
+              <form action="#" id="popup-form">
+                <div class="row title">
+                  <label> Title </label>
+                  <input type="text" id="title-description" />
                 </div>
-                <!-- Entitle Column -->
-                <div class="entitle-column">
-                    <input type="text" id="entitle-column-input" placeholder="Column Title" />
-                    <div class="entitle-column-btn">
-                        <button class="add-btn">Add</button>
-                        <button class="cancle-column-btn">Cancel</button>
-                    </div>
+                <div class="row description">
+                  <label> Description </label>
+                  <textarea
+                    name="Description"
+                    id="description-input"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
                 </div>
+                <button class="popup-btn">Add Card</button>
+              </form>
             </div>
-            <!-- <div class="add-card">
+          </div>
+        </div>
+        <!-- Add Column -->
+        <div class="column-wrapper">
+          <div class="add-column">
+            <button class="add-column-btn">
+              <i class="fa-solid fa-plus"></i> Add new column
+            </button>
+          </div>
+          <!-- Entitle Column -->
+          <div class="entitle-column">
+            <input
+              type="text"
+              id="entitle-column-input"
+              placeholder="Column Title"
+            />
+            <div class="entitle-column-btn">
+              <button class="add-btn">Add</button>
+              <button class="cancle-column-btn">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="add-card">
                 <h3 class="column-title">Column Titel</h3>
                 <button class="add-card-btn"><i class="fa-solid fa-plus"></i> New Card</button>
                 <ul class="card-list">
@@ -145,16 +162,15 @@
                 </ul>
             </div> -->
 
-            <!-- <ul class="card-list">
+        <!-- <ul class="card-list">
 
             </ul> -->
-        </div>
+      </div>
     </section>
 
     <!-- Script -->
     <script src="./script/utilities.js"></script>
     <script src="./script/note.js"></script>
     <script src="./script/board.js"></script>
-</body>
-
+  </body>
 </html>
