@@ -190,17 +190,22 @@
   margin: 10px 0 20px 0;
   border-radius: 6px;
   border: none;
+  cursor: pointer;
+  transition: all .3s ease;
 }
 
+.column-wrapper .first-column-button:hover {
+transform: scale(.98);
+}
 
 /* Card List */
-.card-list .column-card {
+.card-list .card {
   text-align: left;
   display: flex;
-  height: 215px;
+  height: 165px;
   cursor: pointer;
   overflow-y: auto;
-  border-radius: 15px;
+  border-radius: 12px;
   flex-direction: column;
   padding: 15px 20px 20px;
   transition: all 0.3s ease;
@@ -208,19 +213,19 @@
   border: 2px solid var(--nav-color);
 }
 
-.column-card:hover {
+.card:hover {
   border: 2px solid var(--main-color);
 }
 
-.column-card::-webkit-scrollbar {
+.card::-webkit-scrollbar {
   width: 3px;
   height: 180px;
 }
-.column-card::-webkit-scrollbar-track {
+.card::-webkit-scrollbar-track {
   border-radius: 30px;
   background: #f1f1f1;
 }
-.column-card::-webkit-scrollbar-thumb {
+.card::-webkit-scrollbar-thumb {
   border-radius: 25px;
   background: #e2e2e2;
 }
@@ -230,7 +235,7 @@
   text-align: left;
   padding-bottom: 5px;
   color: var(--dark-grey);
-  font-size: calc(18 / 16 * 1rem);
+  font-size: calc(17 / 16 * 1rem);
 }
 
 .card-list .card-details p {
@@ -246,7 +251,6 @@
 .card-list .line {
   width: 100%;
   height: 1px;
-  padding: 1px;
   background: var(--nav-color);
 }
 
@@ -271,11 +275,10 @@
 }
 
 /* Settings */
-
 .card-list .bottom-details .settings .fa-ellipsis {
   cursor: pointer;
   color: var(--text-color);
-  font-size: calc(20 / 16 * 1rem);
+  font-size: calc(18 / 16 * 1rem);
 }
 
 .card-list .bottom-details .settings {
