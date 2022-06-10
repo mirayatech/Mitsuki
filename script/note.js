@@ -1,13 +1,13 @@
-const addNote = document.querySelector('.circle')
-const addBox = document.querySelector('.add-note')
-const closeIcon = document.querySelector('header i')
-const addNoteBtn = document.querySelector('.note-page .popup-btn')
-const addNotePopup = document.querySelector('.note-page .popup-box')
-const popupTitle = document.querySelector('.note-page .popup-title')
-const titleTag = document.querySelector('.note-page #title-description')
-const descTag = document.querySelector('.note-page #description-input')
+const addNoteBtn = document.querySelector('.circle')
+const addNoteBox = document.querySelector('.add-note')
+const notePopupCloseIcon = document.querySelector('header i')
+const notePopupTitle = document.querySelector('.note-page .popup-title')
+const addNotePopupModule = document.querySelector('.note-page .popup-box')
+const noteTitleTag = document.querySelector('.note-page #title-description')
+const addNotePopupModuleBtn = document.querySelector('.note-page .popup-btn')
+const noteDescriptionTag = document.querySelector('.note-page #description-input')
 
-const months = [
+const noteMonths = [
   'January',
   'Febuary',
   'March',
@@ -27,18 +27,18 @@ const notes = JSON.parse(localStorage.getItem('notes') || '[]')
 let isUpdate = false,
   updateId
 
-// Show popup
-addNote.addEventListener('click', () => {
-  titleTag.focus()
-  addNotePopup.classList.add('show')
+addNoteBtn.addEventListener('click', () => {
+  addNotePopupModule.classList.add('show')
+  noteTitleTag.focus()
 })
 
 // Close the popup
-closeIcon.addEventListener('click', () => {
+notePopupCloseIcon.addEventListener('click', () => {
   isUpdate = false
-  addNotePopup.classList.remove('show')
-  titleTag.value = ''
-  descTag.value = ''
+  noteTitleTag.value = ''
+  noteDescriptionTag.value = ''
+  addNotePopupModule.classList.remove('show')
+
 })
 
 function showNotes() {
@@ -54,22 +54,22 @@ function showNotes() {
                         <div class="bottom-details">
                             <span class="date">${note.date}</span>
                             <div class="settings">
-                                <i onclick="showMenu(this)" class="fa-solid fa-ellipsis"></i>
+                                <i onclick="showSettingsMenu(this)" class="fa-solid fa-ellipsis"></i>
                             <ul class="settings-menu">
                                 <li onclick="updateNote(${index}, '${note.title}', '${note.description}')"  class="edit-btn"><i class="fa-solid fa-pen"> </i> Edit </li>
                                 <li onclick="deleteNote(${index})" class="delete-btn"><i class="fa-solid fa-trash"> </i> Delete </li>
                             </ul>
                         </div>
                      </div>
-            </li> `
+                 </li>`
 
-    addBox.insertAdjacentHTML('afterend', liTag)
+    addNoteBox.insertAdjacentHTML('afterend', liTag)
   })
 }
 
 showNotes()
 
-function showMenu(element) {
+function showSettingsMenu(element) {
   element.parentElement.classList.add('show')
   document.addEventListener('click', (e) => {
     // removing show class from the settings menu on document click
@@ -88,27 +88,29 @@ function deleteNote(noteId) {
 function updateNote(noteId, title, desc) {
   isUpdate = true
   updateId = noteId
-  addNote.click()
-  titleTag.value = title
-  descTag.value = desc
-  addNoteBtn.innerText = 'Update Note'
-  popupTitle.innerText = 'Update a Note'
+  addNoteBtn.click()
+  noteTitleTag.value = title
+  noteDescriptionTag.value = desc
+  addNotePopupModuleBtn.innerText = 'Update Note'
+  notePopupTitle.innerText = 'Update a Note'
   console.log(noteId, title, desc)
 }
 
 // Add Note information to Local storage
-addNoteBtn.addEventListener('click', (event) => {
+addNotePopupModuleBtn.addEventListener('click', (event) => {
   event.preventDefault()
-  let noteTitle = titleTag.value
-  let noteDesc = descTag.value
-  // Get the date
+
+  let noteTitle = noteTitleTag.value
+  let noteDescription = noteDescriptionTag.value
+
   let dateObj = new Date()
-  let month = months[dateObj.getMonth()]
+  let month = noteMonths[dateObj.getMonth()]
   let day = dateObj.getDate()
   let year = dateObj.getFullYear()
+
   let noteInfo = {
     title: noteTitle,
-    description: noteDesc,
+    description: noteDescription,
     date: `${month} ${day}, ${year}`,
   }
 
@@ -120,6 +122,6 @@ addNoteBtn.addEventListener('click', (event) => {
   }
 
   localStorage.setItem('notes', JSON.stringify(notes))
+  notePopupCloseIcon.click()
   showNotes()
-  closeIcon.click()
 })
