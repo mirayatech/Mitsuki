@@ -171,9 +171,9 @@
 }
 
 .column-wrapper .column {
+  width: 250px;
   display: flex;
   flex-direction: column;
-  width: 250px;
 }
 
 .column-wrapper .column-title {
@@ -194,8 +194,8 @@
   transition: all 0.3s ease;
 }
 
-.column-wrapper .first-column-button i{
-font-size: calc(14 / 16 * 1rem);
+.column-wrapper .first-column-button i {
+  font-size: calc(14 / 16 * 1rem);
 }
 
 .column-wrapper .first-column-button:hover {
@@ -204,6 +204,7 @@ font-size: calc(14 / 16 * 1rem);
 
 /* Card List */
 .card-list .card {
+  margin: 0 0 10px 0;
   text-align: left;
   display: flex;
   height: 165px;

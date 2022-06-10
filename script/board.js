@@ -70,6 +70,15 @@ function showCards() {
 
 showCards()
 
+function showMenu(element) {
+  element.parentElement.classList.add('show')
+  document.addEventListener('click', (e) => {
+    if (e.target.tagName != 'I' || e.target != element) {
+      element.parentElement.classList.remove('show')
+    }
+  })
+}
+
 addCardPopupModuleBtn.addEventListener('click', (event) => {
   event.preventDefault()
 
