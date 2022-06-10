@@ -34,6 +34,42 @@ cardPopupCloseIcon.addEventListener('click', () => {
   cardTitleTag.value = ''
 })
 
+function showCards() {
+  document.querySelectorAll('.card').forEach((card) => card.remove())
+  cards.forEach((card) => {
+    let liCardTag = `<li class="card">
+    <div class="card-details">
+      <h3 class="title">${card.title}</h3>
+      <p>${card.description}</p>
+    </div>
+    <div class="line"></div>
+    <div class="bottom-details">
+      <span class="date">${card.date}</span>
+      <div class="settings">
+        <i
+          class="fa-solid fa-ellipsis"
+          onclick="showMenu(this)"
+        ></i>
+        <ul class="settings-menu">
+          <li class="edit-btn">
+            <i class="fa-solid fa-pen"> </i> Edit
+          </li>
+          <li class="delete-btn">
+            <i class="fa-solid fa-trash"> </i> Delete
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>`
+
+    document
+      .querySelector('.first-column-list')
+      .insertAdjacentHTML('beforeend', liCardTag)
+  })
+}
+
+showCards()
+
 addCardPopupModuleBtn.addEventListener('click', (event) => {
   event.preventDefault()
 
@@ -57,5 +93,6 @@ addCardPopupModuleBtn.addEventListener('click', (event) => {
   }
 
   localStorage.setItem('cards', JSON.stringify(cards))
+  showCards()
   cardPopupCloseIcon.click()
 })
