@@ -5,7 +5,9 @@ const notePopupTitle = document.querySelector('.note-page .popup-title')
 const addNotePopupModule = document.querySelector('.note-page .popup-box')
 const noteTitleTag = document.querySelector('.note-page #title-description')
 const addNotePopupModuleBtn = document.querySelector('.note-page .popup-btn')
-const noteDescriptionTag = document.querySelector('.note-page #description-input')
+const noteDescriptionTag = document.querySelector(
+  '.note-page #description-input'
+)
 
 const noteMonths = [
   'January',
@@ -24,8 +26,8 @@ const noteMonths = [
 
 const notes = JSON.parse(localStorage.getItem('notes') || '[]')
 // note updated, isUpdate value set to false, because user user try to add new note
-let isUpdate = false,
-  updateId
+let isUpdate = false
+let updateId = false
 
 addNoteBtn.addEventListener('click', () => {
   addNotePopupModule.classList.add('show')
@@ -38,7 +40,6 @@ notePopupCloseIcon.addEventListener('click', () => {
   noteTitleTag.value = ''
   noteDescriptionTag.value = ''
   addNotePopupModule.classList.remove('show')
-
 })
 
 function showNotes() {
