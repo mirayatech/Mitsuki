@@ -5,7 +5,7 @@
   --dark-grey: #1e2739;
   --text-color: #9b9fa4;
   --body-color: #f6f8fa;
-  --main-color: #87e6ba;
+  --main-color: #507ca6;
 }
 
 * {
@@ -83,7 +83,7 @@ button {
 }
 
 .nav-item .item-list .item-links.active {
-  color: #87e6ba;
+  color: var(--main-color);
 }
 
 /* Switch Button */
@@ -234,7 +234,7 @@ input:checked + .slider:before {
 }
 
 .popup #popup-form button:hover {
-  background: #82dbb2;
+  background: #487197;
 }
 
 .popup #popup-form .row.title {
