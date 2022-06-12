@@ -82,6 +82,10 @@ button {
   font-size: calc(20 / 16 * 1rem);
 }
 
+.nav-item .item-list .item-links:hover {
+color: var(--main-color);
+}
+
 .nav-item .item-list .item-links.active {
   color: var(--main-color);
 }
