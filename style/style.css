@@ -133,7 +133,7 @@ button {
 }
 
 input:checked + .slider {
-  background-color: var(--dark-grey);
+  background-color: var(--text-color);
 }
 
 input:focus + .slider {
