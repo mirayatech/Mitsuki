@@ -1,44 +1,55 @@
 const cards = document.querySelectorAll(".card");
-const status = document.querySelectorAll(".column")
-let draggableCard = null;
+const columnStatus = document.querySelectorAll(".column");
+let draggableTodo = null;
 
-cards.forEach(card => {
-    card.addEventListener('dragstart', dragStart)
-    card.addEventListener('dragend', dragEnd)
-})
+cards.forEach((todo) => {
+  todo.addEventListener("dragstart", dragStart);
+  todo.addEventListener("dragend", dragEnd);
+});
 
-status.forEach(column => {
-    column.addEventListener('dragover', dragOver)
-    column.addEventListener('dragenter', dragEnter)
-    column.addEventListener('dragleave', dragLeave)
-    column.addEventListener('drop', dragDrop)
-
-})
+columnStatus.forEach((status) => {
+  status.addEventListener("dragover", dragOver);
+  status.addEventListener("dragenter", dragEnter);
+  status.addEventListener("dragleave", dragLeave);
+  status.addEventListener("drop", dragDrop);
+});
 
 function dragStart() {
-    draggableCard = this;
-    console.log(dragStart)
+  draggableTodo = this;
+  setTimeout(() => {
+    this.style.display = "none";
+  }, 0);
+  console.log("dragStart");
 }
 
 function dragEnd() {
-    draggableCard = null;
-    console.log(dragEnd)
+  draggableTodo = null;
+  setTimeout(() => {
+    this.style.display = "block";
+  }, 0);
+  console.log("dragEnd");
 }
 
-function dragOver(event) {
-    event.preventDefault()
-}
 
+
+function dragOver(e) {
+  e.preventDefault();
+  //   console.log("dragOver");
+}
 
 function dragEnter() {
-    console.log('dragover')
+  this.style.border = "1px dashed #ccc";
+  console.log("dragEnter");
 }
 
-
 function dragLeave() {
-    console.log('dragover')
+  this.style.border = "none";
+  console.log("dragLeave");
 }
 
 function dragDrop() {
-    console.log('dropped')
+  this.style.border = "none";
+  this.appendChild(draggableTodo);
+  console.log("dropped");
 }
+
