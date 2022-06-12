@@ -10,27 +10,19 @@
 
 /* Note Page */
 .note-page.show {
-  gap: 100px;
+  gap: 80px ;
   width: 100%;
   height: 75vh;
   display: grid;
   overflow-y: auto;
   max-width: 1800px;
-  padding-top: 50px;
+  padding-top: 80px;
   justify-content: center;
-  grid-template-columns: repeat(auto-fill, 265px);
+  grid-template-columns: repeat(auto-fill, 250px);
 }
 
 .note-page {
-  gap: 100px;
-  width: 100%;
-  height: 75vh;
   display: none;
-  overflow-y: auto;
-  max-width: 1800px;
-  padding-top: 50px;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fill, 265px);
 }
 
 .note-page::-webkit-scrollbar {
@@ -48,7 +40,8 @@
 
 /* Add Note */
 .note-page .add-note {
-  height: 215px;
+  height: 200px;
+  width: 250px;
   border-radius: 15px;
   background: var(--white);
   border: 2px solid var(--main-color);
@@ -73,20 +66,20 @@
 }
 .note-page .add-note p {
   cursor: default;
-  font-size: 1rem;
+  font-size: calc(18 / 16 * 1rem);
   font-weight: 500;
-  padding-top: 15px;
+  padding-top: 20px;
   color: var(--main-color);
 }
 
 /* Note Card */
 .note-card {
   display: flex;
-  height: 215px;
+  height: 200px;
   overflow-y: auto;
   border-radius: 15px;
   flex-direction: column;
-  padding: 15px 20px 20px;
+  padding: 0px 20px 0px;
   transition: all 0.3s ease;
   justify-content: space-evenly;
   border: 2px solid var(--nav-color);
