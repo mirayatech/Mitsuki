@@ -83,6 +83,11 @@
   transform: scale(0.98);
 }
 
+.column {
+  padding: 15px;
+}
+
+
 /* Card List */
 .card {
   margin: 15px 0 10px 0;

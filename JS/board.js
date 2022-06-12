@@ -19,7 +19,6 @@ function dragStart() {
   setTimeout(() => {
     this.style.display = "none";
   }, 0);
-  console.log("dragStart");
 }
 
 function dragEnd() {
@@ -27,7 +26,6 @@ function dragEnd() {
   setTimeout(() => {
     this.style.display = "block";
   }, 0);
-  console.log("dragEnd");
 }
 
 
@@ -38,9 +36,11 @@ function dragOver(e) {
 }
 
 function dragEnter() {
-  this.style.border = "1px dashed #ccc";
-  console.log("dragEnter");
+  this.style.border = "2px dashed  #507CA6";
+  this.style.borderRadius = "15px"
+  this.style.padding = "15px"
 }
+
 
 function dragLeave() {
   this.style.border = "none";
