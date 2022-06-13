@@ -93,12 +93,12 @@
   margin: 15px 0 10px 0;
   text-align: left;
   display: flex;
-  height: 165px;
+  height: 160px;
   cursor: pointer;
   overflow-y: auto;
   border-radius: 12px;
   flex-direction: column;
-  padding: 15px 15px 15px 15px;
+  padding: 12px;
   transition: all 0.3s ease;
   justify-content: space-evenly;
   border: 2px solid var(--nav-color);
