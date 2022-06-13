@@ -139,3 +139,50 @@
   font-size: calc(15 / 16 * 1rem);
 }
 
+/* Settings */
+.card .bottom-details .settings {
+  position: relative;
+}
+
+.card  .bottom-details .settings-menu {
+  right: 0;
+  bottom: 0;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  border-radius: 5px;
+  transform: scale(0);
+  background: var(--white);
+  transition: all 0.2s ease;
+  transform-origin: bottom right;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+}
+
+.card  .bottom-details .settings .settings-menu.show {
+  transform: scale(1);
+}
+
+.card  .bottom-details .settings-menu li {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  width: 80px;
+  height: auto;
+  padding: 2px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  justify-content: flex-start;
+}
+
+.card  .bottom-details .settings-menu li:hover {
+  color: #5c5c5c;
+}
+
+.card  .bottom-details .settings-menu li i {
+  margin-right: 10px;
+  font-size: calc(14 / 16 * 1rem);
+}
+
