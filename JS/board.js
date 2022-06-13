@@ -10,24 +10,24 @@ const cardDescriptionTag = document.querySelector(
   '.board-page #description-input'
 )
 
-// const cards = JSON.parse(localStorage.getItem('cards') || '[]')
+const cards = JSON.parse(localStorage.getItem('cards') || '[]')
 
 let draggableCard = null
 
-// const cardMonths = [
-//   'January',
-//   'Febuary',
-//   'March',
-//   'April',
-//   'May',
-//   'June',
-//   'July',
-//   'August',
-//   'September',
-//   'October',
-//   'November',
-//   'December',
-// ]
+const cardMonths = [
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
 
 
 
@@ -98,6 +98,16 @@ function dragDrop() {
 function createCard(event) {
   event.preventDefault()
 
+  const cardTitle = cardTitleTag.value
+  const cardDescription = cardDescriptionTag.value
+  const cardDate = new Date()
+
+  const date = cardDate.getDate()
+  const month = cardMonths[cardDate.getMonth()]
+  const year = cardDate.getFullYear()
+
+  
+
   const card_div = document.createElement('div')
   card_div.classList.add('card')
   card_div.setAttribute('draggable', 'true')
@@ -107,11 +117,11 @@ function createCard(event) {
   card_div.appendChild(card_details)
 
   const card_title = document.createElement('h3')
-  card_title.innerText = cardTitleTag.value
+  card_title.innerText = cardTitle
   card_details.appendChild(card_title)
 
   const card_description = document.createElement('p')
-  card_description.innerText = cardDescriptionTag.value
+  card_description.innerText = cardDescription
   card_details.appendChild(card_description)
 
   const card_line = document.createElement('div')
@@ -124,6 +134,7 @@ function createCard(event) {
 
   const card_date = document.createElement('span')
   card_date.classList.add('date')
+  card_date.innerText = `${month} ${date}, ${year} `
   card_bottom_details.appendChild(card_date)
 
   const card_setting = document.createElement('div')
@@ -158,10 +169,29 @@ function createCard(event) {
 
   card_div.addEventListener('dragstart', dragStart)
   card_div.addEventListener('dragend', dragEnd)
+  
+//   object
+  
+  if (cardTitle || cardDescription) {
+      let cardInfo = {
+          title: cardTitle,
+          description: cardDescription,
+          date: `${month} ${date}, ${year} `,
+      }
+
+      console.log(cardInfo)
+
+      cards.push(cardInfo)
+      localStorage.setItem('cards', JSON.stringify(cards))
+      addCardModuleCloseIcon.click()
+
+  }
+
+
   addCardModuleCloseIcon.click()
 }
 
-
+createCard();
 
 // addCardModuleBtn.addEventListener('click', (event) => {
 //     event.preventDefault()
