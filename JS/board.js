@@ -10,24 +10,28 @@ const cardDescriptionTag = document.querySelector(
   '.board-page #description-input'
 )
 
-const cardMonths = [
-  'January',
-  'Febuary',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-]
+// const cards = JSON.parse(localStorage.getItem('cards') || '[]')
 
 let draggableTodo = null
 
-const cards = JSON.parse(localStorage.getItem('cards') || '[]')
+// const cardMonths = [
+//   'January',
+//   'Febuary',
+//   'March',
+//   'April',
+//   'May',
+//   'June',
+//   'July',
+//   'August',
+//   'September',
+//   'October',
+//   'November',
+//   'December',
+// ]
+
+
+
+addCardModuleBtn.addEventListener('click', createCard)
 
 card.forEach((todo) => {
   todo.addEventListener('dragstart', dragStart)
@@ -90,7 +94,6 @@ function dragDrop() {
 
 // create card
 
-addCardModuleBtn.addEventListener('click', createCard)
 
 function createCard(event) {
   event.preventDefault()
