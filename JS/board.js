@@ -12,7 +12,7 @@ const cardDescriptionTag = document.querySelector(
 
 // const cards = JSON.parse(localStorage.getItem('cards') || '[]')
 
-let draggableTodo = null
+let draggableCard = null
 
 // const cardMonths = [
 //   'January',
@@ -33,9 +33,9 @@ let draggableTodo = null
 
 addCardModuleBtn.addEventListener('click', createCard)
 
-card.forEach((todo) => {
-  todo.addEventListener('dragstart', dragStart)
-  todo.addEventListener('dragend', dragEnd)
+card.forEach((card) => {
+  card.addEventListener('dragstart', dragStart)
+  card.addEventListener('dragend', dragEnd)
 })
 
 columnStatus.forEach((status) => {
@@ -58,14 +58,14 @@ addCardModuleCloseIcon.addEventListener('click', () => {
 })
 
 function dragStart() {
-  draggableTodo = this
+  draggableCard = this
   setTimeout(() => {
     this.style.display = 'none'
   }, 0)
 }
 
 function dragEnd() {
-  draggableTodo = null
+  draggableCard = null
   setTimeout(() => {
     this.style.display = 'block'
   }, 0)
@@ -88,7 +88,7 @@ function dragLeave() {
 
 function dragDrop() {
   this.style.border = 'none'
-  this.appendChild(draggableTodo)
+  this.appendChild(draggableCard)
   console.log('dropped')
 }
 
@@ -156,6 +156,8 @@ function createCard(event) {
 
   firstColumn.appendChild(card_div)
 
+  card_div.addEventListener('dragstart', dragStart)
+  card_div.addEventListener('dragend', dragEnd)
   addCardModuleCloseIcon.click()
 }
 
