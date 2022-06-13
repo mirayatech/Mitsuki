@@ -1,4 +1,5 @@
 const card = document.querySelectorAll('.card')
+const firstColumn = document.querySelector('.first-column')
 const columnStatus = document.querySelectorAll('.column')
 const addCardBtn = document.querySelector('.first-column-button')
 const addCardModule = document.querySelector('.board-page .popup-box')
@@ -6,22 +7,22 @@ const addCardModuleCloseIcon = document.querySelector('.board-page .fa-plus')
 const addCardModuleBtn = document.querySelector('.board-page .popup-btn')
 const cardTitleTag = document.querySelector('.board-page #title-description')
 const cardDescriptionTag = document.querySelector(
-    '.board-page #description-input'
+  '.board-page #description-input'
 )
 
 const cardMonths = [
-    'January',
-    'Febuary',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+  'January',
+  'Febuary',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
 ]
 
 let draggableTodo = null
@@ -29,83 +30,157 @@ let draggableTodo = null
 const cards = JSON.parse(localStorage.getItem('cards') || '[]')
 
 card.forEach((todo) => {
-    todo.addEventListener('dragstart', dragStart)
-    todo.addEventListener('dragend', dragEnd)
+  todo.addEventListener('dragstart', dragStart)
+  todo.addEventListener('dragend', dragEnd)
 })
 
 columnStatus.forEach((status) => {
-    status.addEventListener('dragover', dragOver)
-    status.addEventListener('dragenter', dragEnter)
-    status.addEventListener('dragleave', dragLeave)
-    status.addEventListener('drop', dragDrop)
+  status.addEventListener('dragover', dragOver)
+  status.addEventListener('dragenter', dragEnter)
+  status.addEventListener('dragleave', dragLeave)
+  status.addEventListener('drop', dragDrop)
 })
 
 addCardBtn.addEventListener('click', () => {
-    addCardModule.classList.add('show')
+  addCardModule.classList.add('show')
+  cardTitleTag.value = ''
+  cardDescriptionTag.value = ''
 })
 
 addCardModuleCloseIcon.addEventListener('click', () => {
-    addCardModule.classList.remove('show')
+  addCardModule.classList.remove('show')
+  cardTitleTag.value = ''
+  cardDescriptionTag.value = ''
 })
 
 function dragStart() {
-    draggableTodo = this
-    setTimeout(() => {
-        this.style.display = 'none'
-    }, 0)
+  draggableTodo = this
+  setTimeout(() => {
+    this.style.display = 'none'
+  }, 0)
 }
 
 function dragEnd() {
-    draggableTodo = null
-    setTimeout(() => {
-        this.style.display = 'block'
-    }, 0)
+  draggableTodo = null
+  setTimeout(() => {
+    this.style.display = 'block'
+  }, 0)
 }
 
 function dragOver(e) {
-    e.preventDefault()
+  e.preventDefault()
 }
 
 function dragEnter() {
-    this.style.border = '2px dashed  #507CA6'
-    this.style.borderRadius = '15px'
-    this.style.padding = '15px'
+  this.style.border = '2px dashed  #507CA6'
+  this.style.borderRadius = '15px'
+  this.style.padding = '15px'
 }
 
 function dragLeave() {
-    this.style.border = 'none'
-    console.log('dragLeave')
+  this.style.border = 'none'
+  console.log('dragLeave')
 }
 
 function dragDrop() {
-    this.style.border = 'none'
-    this.appendChild(draggableTodo)
-    console.log('dropped')
+  this.style.border = 'none'
+  this.appendChild(draggableTodo)
+  console.log('dropped')
 }
 
-addCardModuleBtn.addEventListener('click', (event) => {
-    event.preventDefault()
+// create card
 
-    const cardTitle = cardTitleTag.value
-    const cardDescription = cardDescriptionTag.value
-    const cardDate = new Date()
+addCardModuleBtn.addEventListener('click', createCard)
 
-    const date = cardDate.getDate()
-    const month = cardMonths[cardDate.getMonth()]
-    const year = cardDate.getFullYear()
+function createCard(event) {
+  event.preventDefault()
 
-    if (cardTitle || cardDescription) {
-        let cardInfo = {
-            title: cardTitle,
-            description: cardDescription,
-            date: `${month} ${date}, ${year} `,
-        }
+  const card_div = document.createElement('div')
+  card_div.classList.add('card')
+  card_div.setAttribute('draggable', 'true')
 
-        console.log(cardInfo)
+  const card_details = document.createElement('div')
+  card_details.classList.add('card-details')
+  card_div.appendChild(card_details)
 
-        cards.push(cardInfo)
-        localStorage.setItem('cards', JSON.stringify(cards))
-        addCardModuleCloseIcon.click()
-        showCards()
-    }
-})
+  const card_title = document.createElement('h3')
+  card_title.innerText = cardTitleTag.value
+  card_details.appendChild(card_title)
+
+  const card_description = document.createElement('p')
+  card_description.innerText = cardDescriptionTag.value
+  card_details.appendChild(card_description)
+
+  const card_line = document.createElement('div')
+  card_line.classList.add('line')
+  card_div.appendChild(card_line)
+
+  const card_bottom_details = document.createElement('div')
+  card_bottom_details.classList.add('bottom-details')
+  card_div.appendChild(card_bottom_details)
+
+  const card_date = document.createElement('span')
+  card_date.classList.add('date')
+  card_bottom_details.appendChild(card_date)
+
+  const card_setting = document.createElement('div')
+  card_setting.classList.add('settings')
+  card_bottom_details.appendChild(card_setting)
+
+  const card_setting_icon = document.createElement('i')
+  card_setting_icon.classList.add('fa-solid', 'fa-ellipsis')
+  card_setting.appendChild(card_setting_icon)
+
+  const card_setting_menu = document.createElement('ul')
+  card_setting_menu.classList.add('settings-menu')
+  card_setting.appendChild(card_setting_menu)
+
+  const edit_btn = document.createElement('li')
+  edit_btn.classList.add('edit-btn')
+  card_setting_menu.appendChild(edit_btn)
+
+  const edit_btn_icon = document.createElement('i')
+  edit_btn_icon.classList.add('fa-solid', 'fa-pen')
+  edit_btn.appendChild(edit_btn_icon)
+
+  const delete_btn = document.createElement('li')
+  delete_btn.classList.add('delete_btn')
+  card_setting_menu.appendChild(delete_btn)
+
+  const delete_btn_icon = document.createElement('i')
+  delete_btn_icon.classList.add('fa-solid', 'fa-trash')
+  delete_btn_icon.appendChild(delete_btn)
+
+  firstColumn.appendChild(card_div)
+
+  addCardModuleCloseIcon.click()
+}
+
+
+
+// addCardModuleBtn.addEventListener('click', (event) => {
+//     event.preventDefault()
+
+//     const cardTitle = cardTitleTag.value
+//     const cardDescription = cardDescriptionTag.value
+//     const cardDate = new Date()
+
+//     const date = cardDate.getDate()
+//     const month = cardMonths[cardDate.getMonth()]
+//     const year = cardDate.getFullYear()
+
+//     if (cardTitle || cardDescription) {
+//         let cardInfo = {
+//             title: cardTitle,
+//             description: cardDescription,
+//             date: `${month} ${date}, ${year} `,
+//         }
+
+//         console.log(cardInfo)
+
+//         cards.push(cardInfo)
+//         localStorage.setItem('cards', JSON.stringify(cards))
+//         addCardModuleCloseIcon.click()
+
+//     }
+// })
