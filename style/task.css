@@ -6,11 +6,10 @@
   --medium-grey: #e6e6e6;
   --text-color: #8d8d8d;
   --body-color: #f6f8fa;
-  --main-color: #507CA6;
+  --main-color: #507ca6;
 }
 
 .task-page.show {
-  gap: 100px;
   width: 100%;
   height: 75vh;
   display: block;
@@ -41,3 +40,86 @@
   background: #e6e6e6;
 }
 
+/* Wrapper */
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  margin-top: 60px;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Task input */
+.task-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.task-input input {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: var(--dark-grey);
+  font-weight: 500;
+  border: 2px solid var(--medium-grey);
+  transition: all 0.3s ease;
+}
+
+.task-input input:focus {
+  border: 2px solid var(--main-color);
+}
+
+.task-input input::placeholder {
+  color: var(--nav-color);
+}
+
+/* Controlls */
+
+.controls {
+  margin-top: 15px;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.controls button {
+  cursor: pointer;
+  padding: 5px 0 5px 0;
+  font-size: calc(14 / 16 * 1rem);
+  border-radius: 7px;
+  font-weight: 500;
+  color: var(--white);
+  width: 100px;
+  background: var(--main-color);
+  border: 2px solid var(--main-color);
+}
+
+.controls .filters span {
+  font-size: calc(17 / 16 * 1rem);
+}
+
+.controls .filters span:not(:first-child) {
+  margin-left: 30px;
+}
+
+/* Task  */
+.task-box {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.task {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
