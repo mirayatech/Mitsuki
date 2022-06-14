@@ -47,9 +47,46 @@
           </label>
         </div>
       </nav>
-
       <!-- Introduction Page - How it works? -->
       <div class="introduction"></div>
+
+      <!-- Board Page -->
+      <div class="task-page">
+        <!-- wrapper -->
+        <div class="wrapper">
+          <!-- Task Input -->
+          <div class="task-input">
+            <i class="fa-solid fa-bars-staggered"></i>
+            <input type="text" placeholder="Add a new task" />
+          </div>
+          <!-- Controls - Filters -->
+          <div class="controls">
+            <div class="filters">
+              <span class="active" id="all">All Tasks</span>
+              <span id="pending">Pending</span>
+              <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+          </div>
+          <!-- ALl tasks -->
+          <ul class="task-box">
+            <!-- Task -->
+            <li class="task">
+              <label for="">
+                <input type="checkbox" />
+                <p>First task</p>
+              </label>
+              <div class="settings">
+                <i class="fa-solid fa-ellipsis"></i>
+                <ul class="task-menu">
+                  <li><i class="fa-solid fa-pen"></i>Edit</li>
+                  <li><i class="fa-regular fa-trash-can"></i>Delete</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
 
       <!-- Note page -->
       <div class="note-page">
@@ -87,11 +124,6 @@
           </div>
           <p>Add new note</p>
         </li>
-      </div>
-
-      <!-- Board Page -->
-      <div class="task-page">
-        
       </div>
     </section>
     <!-- Script -->
