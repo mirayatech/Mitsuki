@@ -9,18 +9,17 @@
   --main-color: #507CA6;
 }
 
-.board-page.show {
+.task-page.show {
   gap: 100px;
   width: 100%;
   height: 75vh;
   display: block;
   overflow-y: auto;
   max-width: 1800px;
-  margin-top: 30px;
 }
 
 /* Board Page */
-.board-page {
+.task-page {
   gap: 100px;
   width: 100%;
   height: 75vh;
@@ -29,15 +28,15 @@
   max-width: 1800px;
 }
 
-.board-page::-webkit-scrollbar {
+.task-page::-webkit-scrollbar {
   width: 5px;
 }
-.board-page::-webkit-scrollbar-track {
+.task-page::-webkit-scrollbar-track {
   border-radius: 25px;
   background: #f1f1f1;
 }
 
-.board-page::-webkit-scrollbar-thumb {
+.task-page::-webkit-scrollbar-thumb {
   border-radius: 25px;
   background: #e6e6e6;
 }
