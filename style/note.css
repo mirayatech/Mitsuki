@@ -5,7 +5,7 @@
   --dark-grey: #1e2739;
   --text-color: #797979;
   --body-color: #f6f8fa;
-  --main-color: #507CA6;
+  --main-color: #507ca6;
 }
 
 /* Popup Box */
@@ -132,10 +132,10 @@
   border: 1px solid var(--nav-color);
 }
 
-
 /* Note Page */
 .note-page.show {
-  gap: 80px ;
+  margin-top: 30px;
+  gap: 80px;
   width: 100%;
   height: 75vh;
   display: grid;
