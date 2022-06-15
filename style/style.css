@@ -153,8 +153,7 @@ button {
   }
 
   .note-page.show,
-  .introduction.show,
-  .task-page.show {
+  .task-page{
     height: 70vh;
   }
 }
