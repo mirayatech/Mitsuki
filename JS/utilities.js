@@ -1,5 +1,3 @@
-const introductionLink = document.querySelector('.introduction-link')
-const introductionPage = document.querySelector('.introduction')
 const navLinks = document.querySelectorAll('.item-links')
 const taskLink = document.querySelector('.tasks-link')
 const taskPage = document.querySelector('.task-page')
@@ -15,17 +13,11 @@ navLinks.forEach((link) => {
 })
 
 function showPages(link) {
-  if (link === introductionLink) {
-    taskPage.classList.remove('show')
+  if (link === taskLink) {
+    taskPage.classList.remove('hide')
     notePage.classList.remove('show')
-    introductionPage.classList.remove('hide')
-  } else if (link === taskLink) {
-    taskPage.classList.add('show')
-    notePage.classList.remove('show')
-    introductionPage.classList.add('hide')
   } else if (link === noteLink) {
     notePage.classList.add('show')
-    taskPage.classList.remove('show')
-    introductionPage.classList.add('hide')
+    taskPage.classList.add('hide')
   }
 }

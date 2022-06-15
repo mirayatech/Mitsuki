@@ -3,9 +3,13 @@
   --nav-color: #bfc5cd;
   --line-color: #f4f4f4;
   --dark-grey: #1e2739;
-  --text-color: #9b9fa4;
+  --medium-grey: #e6e6e6;
+  --text-color: #8d8d8d;
   --body-color: #f6f8fa;
-  --main-color: #507ca6;
+  --blue: #4285f4;
+  --red: #db4437;
+  --yellow: #f4b400;
+  --green: #0f9d58;
 }
 
 * {
@@ -83,12 +87,28 @@ button {
   font-size: calc(20 / 16 * 1rem);
 }
 
-.nav-item .item-list .item-links:hover {
-  color: var(--main-color);
+.nav-item .item-list .item-links:hover:first-child {
+  color: var(--red);
 }
 
-.nav-item .item-list .item-links.active {
-  color: var(--main-color);
+.nav-item .item-list .item-links:hover:nth-child(2) {
+  color: var(--yellow);
+}
+
+.nav-item .item-list .item-links:hover:nth-child(3) {
+  color: var(--green);
+}
+
+.nav-item .item-list .item-links.active:first-child {
+  color: var(--red);
+}
+
+.nav-item .item-list .item-links.active:nth-child(2) {
+  color: var(--yellow);
+}
+
+.nav-item .item-list .item-links.active:nth-child(3) {
+  color: var(--green);
 }
 
 /* Media Query */

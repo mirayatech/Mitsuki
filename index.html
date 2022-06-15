@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/note.css" />
+    <link rel="stylesheet" href="./style/task.css" />
+    <link rel="stylesheet" href="./style/introduction.css" />
+    <title>Mitsuki</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./style/style.css" />
-  <link rel="stylesheet" href="./style/note.css" />
-  <link rel="stylesheet" href="./style/task.css" />
-  <link rel="stylesheet" href="./style/introduction.css" />
-  <title>Mitsuki</title>
-</head>
-
-<body>
-
-  <section class="section">
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="logo">
-        <h2>Mitsuki</h2>
-      </div>
-      <div class="nav-item">
-        <ul class="item-list">
-          <li class="item-links introduction-link active">How it works?</li>
-          <li class="item-links tasks-link">Tasks</li>
-          <li class="item-links notes-link">Notes</li>
-        </ul>
-      </div>
-    </nav>
-    <!-- Introduction Page - How it works? -->
-    <div class="introduction"></div>
-
-    <!-- Board Page -->
-    <div class="task-page">
-      <div class="wrapper">
-        <!-- Input -->
-        <div class="task-input">
-          <input type="text" placeholder="Add a new task" />
+  <body>
+    <section class="section">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="logo">
+          <h2>Mitsuki</h2>
         </div>
-        <!-- Filters -->
-        <div class="controls">
-          <div class="filters">
-            <span class="active" id="all">All Tasks</span>
-            <span id="pending">Pending</span>
-            <span id="completed">Completed</span>
+        <div class="nav-item">
+          <ul class="item-list">
+            <li class="item-links tasks-link active">Tasks</li>
+            <li class="item-links notes-link">Notes</li>
+          </ul>
+        </div>
+      </nav>
+      <!-- Board Page -->
+      <div class="task-page">
+        <div class="wrapper">
+          <!-- Input -->
+          <div class="task-input">
+            <input type="text" placeholder="Add a new task" />
           </div>
-          <button class="clear-btn">Clear All</button>
+          <!-- Filters -->
+          <div class="controls">
+            <div class="filters">
+              <span class="active" id="all">All Tasks</span>
+              <span id="pending">Pending</span>
+              <span id="completed">Completed</span>
+            </div>
+            <button class="clear-btn">Clear All</button>
+          </div>
+          <!-- ALl tasks -->
+          <ul class="task-box"></ul>
         </div>
-        <!-- ALl tasks -->
-        <ul class="task-box"> </ul>
       </div>
-    </div>
 
-    <!-- Note page -->
-    <div class="note-page">
-      <!--Note Popup Module-->
-      <div class="popup-box">
-        <div class="popup">
-          <div class="content">
-            <header>
-              <p class="popup-title">Add a new Note</p>
-              <i class="fa-solid fa-plus"> </i>
-            </header>
-            <form action="#" id="popup-form">
-              <div class="row title">
-                <label> Title </label>
-                <input type="text" id="title-description" />
-              </div>
-              <div class="row description">
-                <label> Description </label>
-                <textarea name="Description" id="description-input" cols="30" rows="10"></textarea>
-              </div>
-              <button class="popup-btn">Add Note</button>
-            </form>
+      <!-- Note page -->
+      <div class="note-page">
+        <!--Note Popup Module-->
+        <div class="popup-box">
+          <div class="popup">
+            <div class="content">
+              <header>
+                <p class="popup-title">Add a new Note</p>
+                <i class="fa-solid fa-plus"> </i>
+              </header>
+              <form action="#" id="popup-form">
+                <div class="row title">
+                  <label> Title </label>
+                  <input type="text" id="title-description" />
+                </div>
+                <div class="row description">
+                  <label> Description </label>
+                  <textarea
+                    name="Description"
+                    id="description-input"
+                    cols="30"
+                    rows="10"
+                  ></textarea>
+                </div>
+                <button class="popup-btn">Add Note</button>
+              </form>
+            </div>
           </div>
         </div>
+        <!-- Add Note -->
+        <li class="add-note">
+          <div class="circle">
+            <i class="fa-solid fa-plus"></i>
+          </div>
+          <p>Add new note</p>
+        </li>
       </div>
-      <!-- Add Note -->
-      <li class="add-note">
-        <div class="circle">
-          <i class="fa-solid fa-plus"></i>
-        </div>
-        <p>Add new note</p>
-      </li>
-    </div>
-  </section>
-  <!-- Script -->
-  <script src="./JS/utilities.js"></script>
-  <script src="./JS/task.js"></script>
-  <script src="./JS/note.js"></script>
-</body>
-
+    </section>
+    <!-- Script -->
+    <script src="./JS/utilities.js"></script>
+    <script src="./JS/task.js"></script>
+    <script src="./JS/note.js"></script>
+  </body>
 </html>
