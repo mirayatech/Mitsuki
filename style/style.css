@@ -84,69 +84,89 @@ button {
 }
 
 .nav-item .item-list .item-links:hover {
-color: var(--main-color);
+  color: var(--main-color);
 }
 
 .nav-item .item-list .item-links.active {
   color: var(--main-color);
 }
 
-/* Switch Button */
-.dark-light-mode {
-  width: 60px;
-  height: 34px;
-  position: relative;
-  display: inline-block;
+/* Media Query */
+
+@media (max-width: 755px) {
+  /* Navbar */
+  .navbar {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .navbar .logo h2 {
+    font-size: calc(25 / 16 * 1rem);
+  }
+
+  .nav-item .item-list .item-links {
+    padding: 0 15px;
+    font-size: calc(18 / 16 * 1rem);
+  }
 }
 
-.dark-light-mode input {
-  width: 0;
-  height: 0;
-  opacity: 0;
+@media (max-width: 578px) {
+  .task-page,
+  .note-page,
+  .introduction {
+    height: 65vh;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar .logo h2 {
+    font-size: calc(25 / 16 * 1rem);
+  }
+
+  .nav-item .item-list .item-links {
+    padding: 0 15px;
+    margin: 15px 0;
+    font-size: calc(18 / 16 * 1rem);
+  }
+
+  .note-page.show,
+  .introduction.show,
+  .task-page.show {
+    height: 70vh;
+  }
 }
 
-.slider.round {
-  border-radius: 34px;
+@media (max-width: 435px) {
+  /* Navbar */
+  .navbar .logo h2 {
+    font-size: calc(23 / 16 * 1rem);
+  }
+
+  .nav-item .item-list .item-links {
+    padding: 0 10px;
+    margin: 15px 0;
+  }
+
+  .section {
+    padding: 30px 10px;
+    max-width: 1900px;
+  }
 }
 
-.slider.round:before {
-  border-radius: 50%;
-}
+@media (max-width: 395px) {
+  .navbar .logo h2 {
+    font-size: calc(18 / 16 * 1rem);
+  }
+  .section {
+    padding: 30px 10px;
+    max-width: 3000px;
+  }
 
-.slider {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  cursor: pointer;
-  transition: 0.4s;
-  position: absolute;
-  -webkit-transition: 0.4s;
-  background-color: var(--main-color);
-}
-
-.slider:before {
-  left: 4px;
-  content: '';
-  bottom: 4px;
-  width: 26px;
-  height: 26px;
-  transition: 0.4s;
-  position: absolute;
-  -webkit-transition: 0.4s;
-  background-color: white;
-}
-
-input:checked + .slider {
-  background-color: var(--text-color);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--main-color);
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  -webkit-transform: translateX(26px);
+  .nav-item .item-list .item-links {
+    padding: 0;
+    font-size: calc(16 / 16 * 1rem);
+  }
 }

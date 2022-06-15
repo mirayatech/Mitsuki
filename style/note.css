@@ -283,7 +283,6 @@
   right: 0;
   bottom: 0;
   height: auto;
-  padding: 10px;
   position: absolute;
   border-radius: 5px;
   transform: scale(0);
@@ -302,9 +301,9 @@
   cursor: pointer;
   align-items: center;
   justify-content: space-between;
-  width: 80px;
+  width: auto;
   height: auto;
-  padding: 5px 0;
+  padding: 10px;
   font-size: 1rem;
   font-weight: 500;
   border-radius: 0;
@@ -313,10 +312,162 @@
 }
 
 .bottom-details .settings-menu li:hover {
-  color: #5c5c5c;
+  background: #f5f5f5;
 }
 
 .bottom-details .settings-menu li i {
-  margin-right: 10px;
-  font-size: calc(14 / 16 * 1rem);
+  font-size: calc(15 / 16 * 1rem);
+  padding-right: 8px;
+}
+
+/* Media Query */
+
+@media (max-width: 755px) {
+  .popup-box .popup {
+    width: 350px;
+  }
+  .popup .content header p {
+    font-size: calc(18 / 16 * 1rem);
+  }
+
+  .popup .content header i {
+    font-size: calc(17 / 16 * 1rem);
+  }
+
+  /* Content - Form */
+  .popup #popup-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup #popup-form button {
+    padding: 10px 0;
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .popup #popup-form .row.title input {
+    padding: 18px 10px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .popup #popup-form .row.title label,
+  .popup #popup-form .row.description label {
+    font-size: 1rem;
+  }
+
+  .popup #popup-form .row.description textarea {
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  /* Note Page */
+  .note-page.show {
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, 250px);
+  }
+
+  /* Add Note */
+  .note-page .add-note {
+    height: 180px;
+    width: 220px;
+  }
+
+  .note-page .add-note .circle i {
+    width: 75px;
+    height: 75px;
+    padding: 29px;
+    font-size: 1rem;
+  }
+  .note-page .add-note p {
+    font-size: 1rem;
+    padding-top: 20px;
+  }
+
+  /* Note Card */
+  .note-card {
+    height: 180px;
+    width: 220px;
+  }
+
+  /* Note Card - Details */
+  .note-card .details {
+    cursor: default;
+  }
+
+  .note-card .details h3 {
+    font-size: 1rem;
+  }
+
+  .note-card .details p {
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .bottom-details .date {
+    font-size: calc(13 / 16 * 1rem);
+  }
+
+  .bottom-details .settings .fa-ellipsis {
+    font-size: calc(18 / 16 * 1rem);
+  }
+
+  /* Settings */
+  .bottom-details .settings-menu li {
+    padding: 10px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .bottom-details .settings-menu li i {
+    font-size: calc(14 / 16 * 1rem);
+  }
+}
+
+@media (max-width: 669px) {
+  .note-page.show {
+    gap: 2;
+    padding-top: 30px;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 578px) {
+  /* Note Page */
+  .note-page.show {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 435px) {
+  /* Navbar */
+  .navbar .logo h2 {
+    font-size: calc(23 / 16 * 1rem);
+  }
+
+  .nav-item .item-list .item-links {
+    padding: 0 10px;
+    margin: 15px 0;
+  }
+
+  /* Add Note */
+  .note-page .add-note {
+    height: 160px;
+    width: 180px;
+  }
+
+  .note-page .add-note .circle i {
+    width: 62px;
+    height: 62px;
+    padding: 23px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+  .note-page .add-note p {
+    font-size: calc(15 / 16 * 1rem);
+    font-weight: 500;
+    padding-top: 20px;
+  }
+
+  /* Note Card */
+  .note-card {
+    height: 160px;
+    width: 180px;
+  }
 }

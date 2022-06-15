@@ -10,15 +10,17 @@
 }
 
 .task-page.show {
+  margin: auto;
   width: 100%;
   height: 75vh;
   display: block;
   overflow-y: auto;
   max-width: 1800px;
   margin-top: 30px;
+  padding: 0 10px;
 }
 
-/* Board Page */
+/* Task Page */
 .task-page {
   gap: 100px;
   width: 100%;
@@ -161,16 +163,20 @@
   cursor: pointer;
 }
 .settings .task-menu {
-  z-index: 10;
-  right: -5px;
-  bottom: 30px;
-  background: #fff;
+  z-index: 2000;
+  right: 0;
+  bottom: 0;
+  height: auto;
   position: absolute;
-  border-radius: 8px;
+  border-radius: 5px;
   transform: scale(0);
-  transform-origin: top right;
+  background: var(--white);
+  transition: all 0.2s ease;
+  transform-origin: bottom right;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+}
+.task-menu.show {
+  transform: scale(1);
 }
 .task-box .task:last-child .task-menu {
   bottom: 0;
@@ -180,18 +186,20 @@
   bottom: -65px;
   transform-origin: top right;
 }
-.task-menu.show {
-  transform: scale(1);
-}
+
 .task-menu li {
-  align-items: center;
+  color: var(--text-color);
   display: flex;
-  height: auto;
-  width: auto;
-  font-size: 1rem;
-  margin-bottom: 2px;
-  padding: 10px;
   cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 0;
+  transition: all 0.3s ease;
   justify-content: flex-start;
 }
 .task-menu li:last-child {
@@ -203,4 +211,124 @@
 .settings li i {
   font-size: calc(15 / 16 * 1rem);
   padding-right: 8px;
+}
+
+/* Media Query */
+
+@media (max-width: 755px) {
+  .task-input input {
+    padding: 8px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  /* Controlls */
+  .controls {
+    margin-top: 20px;
+  }
+
+  .controls button {
+    padding: 5px 0 5px 0;
+    font-size: calc(13 / 16 * 1rem);
+    width: 80px;
+  }
+
+  .controls .filters span {
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .controls .filters span:not(:first-child) {
+    margin-left: 20px;
+  }
+
+  .task {
+    padding: 20px 0;
+  }
+
+  .task label p {
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .task label input[type='checkbox'] {
+    height: 12px;
+    width: 12px;
+  }
+
+  /* Settings */
+  .task-menu li {
+    padding: 10px;
+    font-size: calc(14 / 16 * 1rem);
+  }
+
+  .settings li i {
+    font-size: calc(14 / 16 * 1rem);
+  }
+}
+
+@media (max-width: 578px) {
+  /* Note Page */
+  .note-page.show {
+    margin-top: 0;
+  }
+
+  .wrapper {
+    margin: 0;
+  }
+}
+
+@media (max-width: 530px) {
+  .controls {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .controls .filters span:not(:first-child) {
+    margin-left: 5px;
+  }
+
+  .controls .filters span {
+    margin: 0px;
+  }
+
+  .controls button {
+    margin-top: 20px;
+    padding: 3px 0 3px 0;
+    font-size: calc(13 / 16 * 1rem);
+    width: 80px;
+  }
+
+  .controls .filters span {
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .task-box span {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 414px) {
+  .controls button {
+    margin-top: 20px;
+    padding: 3px 0 3px 0;
+    font-size: calc(13 / 16 * 1rem);
+    width: 80px;
+  }
+
+  .controls .filters span {
+    font-size: calc(15 / 16 * 1rem);
+  }
+
+  .task-box span {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
