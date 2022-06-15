@@ -121,7 +121,8 @@
 }
 
 .task {
-  margin: 20px 0;
+  padding: 25px 0;
+  border-top: 2px solid var(--line-color);
   width: 100%;
   display: flex;
   align-items: center;
@@ -136,8 +137,13 @@
 .task label p {
   font-weight: 500;
   font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
+.task label p.checked {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
 .task label input[type='checkbox'] {
   cursor: pointer;
   height: 14px;
@@ -148,50 +154,53 @@
 
 /* Settings */
 
-.settings {
+.task-box .settings {
   position: relative;
 }
-
-.settings i {
+.settings :where(i, li) {
   cursor: pointer;
-  font-size: calc(18 / 16 * 1rem);
 }
-
 .settings .task-menu {
-  right: 0;
-  bottom: 10px;
-  height: auto;
-  padding: 10px;
+  z-index: 10;
+  right: -5px;
+  bottom: 30px;
+  background: #fff;
   position: absolute;
-  border-radius: 5px;
+  border-radius: 8px;
   transform: scale(0);
-  background: var(--white);
-  transition: all 0.2s ease;
-  transform-origin: bottom right;
+  transform-origin: top right;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
 }
-
-.settings .task-menu li {
-  color: var(--text-color);
-  display: flex;
-  cursor: pointer;
+.task-box .task:last-child .task-menu {
+  bottom: 0;
+  transform-origin: bottom right;
+}
+.task-box .task:first-child .task-menu {
+  bottom: -65px;
+  transform-origin: top right;
+}
+.task-menu.show {
+  transform: scale(1);
+}
+.task-menu li {
   align-items: center;
-  justify-content: space-between;
-  width: 80px;
+  display: flex;
   height: auto;
-  padding: 5px 0;
+  width: auto;
   font-size: 1rem;
-  font-weight: 500;
-  border-radius: 0;
-  transition: all 0.3s ease;
+  margin-bottom: 2px;
+  padding: 10px;
+  cursor: pointer;
   justify-content: flex-start;
 }
-
-.settings .task-menu li:hover {
-  color: #5c5c5c;
+.task-menu li:last-child {
+  margin-bottom: 0;
 }
-
-.settings .task-menu li i {
-  margin-right: 10px;
-  font-size: calc(14 / 16 * 1rem);
+.settings li:hover {
+  background: #f5f5f5;
+}
+.settings li i {
+  font-size: calc(15 / 16 * 1rem);
+  padding-right: 8px;
 }
