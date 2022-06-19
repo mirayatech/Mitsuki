@@ -23,3 +23,9 @@ In this note app, users can easily add, edit, or delete their notes. The notes u
 ## How it looks 🎥
 
 🔗 https://mitsuki.netlify.app/
+
+
+
+https://user-images.githubusercontent.com/71933266/174468721-0adbb631-3a5f-47fa-9c90-ba9b2aa77291.mp4
+
+
