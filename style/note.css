@@ -5,6 +5,7 @@
   --dark-grey: #1e2739;
   --text-color: #797979;
   --body-color: #f6f8fa;
+  --blue: #4181ED;
 }
 
 /* Popup Box */
@@ -89,7 +90,7 @@
   border-radius: 5px;
   color: var(--white);
   margin: 15px auto 0 auto;
-  background: var(--green);
+  background: var(--blue);
 }
 
 .popup #popup-form button:hover {
@@ -168,7 +169,7 @@
   width: 250px;
   border-radius: 15px;
   background: var(--white);
-  border: 2px solid var(--green);
+  border: 2px solid var(--blue);
 }
 
 .note-page .add-note {
@@ -184,16 +185,16 @@
   padding: 28px;
   cursor: pointer;
   border-radius: 50%;
-  color: var(--green);
+  color: var(--blue);
   font-size: calc(20 / 16 * 1rem);
-  border: 2px dashed var(--green);
+  border: 2px dashed var(--blue);
 }
 .note-page .add-note p {
   cursor: default;
   font-size: calc(18 / 16 * 1rem);
   font-weight: 500;
   padding-top: 20px;
-  color: var(--green);
+  color: var(--blue);
 }
 
 /* Note Card */
@@ -210,7 +211,7 @@
 }
 
 .note-card:hover {
-  border: 2px solid var(--green);
+  border: 2px solid var(--blue);
 }
 
 .note-card::-webkit-scrollbar {

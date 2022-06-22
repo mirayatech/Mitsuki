@@ -1,12 +1,10 @@
 :root {
   --white: #ffff;
-  --nav-color: #bfc5cd;
   --line-color: #f4f4f4;
   --dark-grey: #1e2739;
   --medium-grey: #e6e6e6;
   --text-color: #8d8d8d;
   --body-color: #f6f8fa;
-  --green: #6ac46d;
   --red: #e23333;
 }
 /* Task Page */
@@ -344,7 +342,11 @@
     justify-content: center;
     align-items: center;
   }
-}
+
+
+.controls button.show {
+  font-size: 1rem;
+}}
 
 @media (max-width: 414px) {
   .controls button {
@@ -363,5 +365,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .controls button.show {
+    font-size: .9rem;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .task-input input {
+    font-size: .9rem;
+    padding: 5px 8px;
+  }
+  .task-input .add-task {
+   font-size: .9rem;
+   padding: 5px;
   }
 }

@@ -1,6 +1,5 @@
 :root {
   --white: #ffff;
-  --nav-color: #bfc5cd;
   --line-color: #f4f4f4;
   --dark-grey: #1e2739;
   --medium-grey: #e6e6e6;
@@ -79,34 +78,20 @@ button {
   cursor: pointer;
   padding: 0 30px;
   font-weight: 500;
-  color: var(--nav-color);
+  color: var(--text-color);
   transition: all 0.3s ease;
   font-size: calc(20 / 16 * 1rem);
 }
 
-.nav-item .item-list .item-links:hover:first-child {
-  color: var(--red);
+.nav-item .item-list .item-links:hover{
+  color: var(--dark-grey);
 }
 
-.nav-item .item-list .item-links:hover:nth-child(2) {
-  color: var(--yellow);
+
+.nav-item .item-list .item-links.active{
+  color: var(--dark-grey);
 }
 
-.nav-item .item-list .item-links:hover:nth-child(3) {
-  color: var(--green);
-}
-
-.nav-item .item-list .item-links.active:first-child {
-  color: var(--red);
-}
-
-.nav-item .item-list .item-links.active:nth-child(2) {
-  color: var(--yellow);
-}
-
-.nav-item .item-list .item-links.active:nth-child(3) {
-  color: var(--green);
-}
 
 footer {
   font-weight: 500;
