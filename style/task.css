@@ -61,38 +61,54 @@
 }
 
 .task-input input {
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 6px 10px;
+  width: 90%;
+  border-radius: 10px 0 0 10px;
   font-size: 1rem;
   color: var(--dark-grey);
   font-weight: 500;
   border: 2px solid var(--medium-grey);
   transition: all 0.3s ease;
-}
-
-.task-input input:focus {
-  border: 2px solid var(--nav-color);
+  margin-right: 5px;
 }
 
 .task-input input::placeholder {
   color: var(--nav-color);
 }
 
+.task-input .add-task {
+  margin-bottom: 20px;
+
+  cursor: pointer;
+  width: 10%;
+  padding: 6px;
+  border-radius: 0 10px 10px 0;
+  font-size: 1rem;
+  color: var(--dark-grey);
+  font-weight: 500;
+  border: 2px solid var(--medium-grey);
+  transition: all 0.3s ease;
+}
 /* Controlls */
 
-.controls {
-  margin-top: 15px;
+.controls.left {
   width: 100%;
-  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.controls.center {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .controls button.show {
-  transform: scale(1);
-  cursor: pointer;
+  display: block;
   font-size: calc(17 / 16 * 1rem);
   border-radius: 7px;
   font-weight: 500;
@@ -104,7 +120,7 @@
 }
 
 .controls button {
-  transform: scale(0);
+  display: none;
 }
 
 .controls button:hover {
@@ -133,8 +149,14 @@
   width: 100%;
 }
 
+.task-box p {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .task {
-  padding: 25px 0;
+  margin-top: 20px;
+  padding-top: 20px;
   border-top: 2px solid var(--line-color);
   width: 100%;
   display: flex;
