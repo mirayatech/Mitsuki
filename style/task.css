@@ -94,6 +94,7 @@
 
 .controls.left {
   width: 100%;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -149,14 +150,13 @@
   width: 100%;
 }
 
-.task-box p {
-  margin-top: 20px;
+.task-box .instructor {
+  margin-top: 30px;
   text-align: center;
 }
 
 .task {
-  margin-top: 20px;
-  padding-top: 20px;
+  padding: 25px 0;
   border-top: 2px solid var(--line-color);
   width: 100%;
   display: flex;
