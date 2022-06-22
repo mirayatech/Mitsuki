@@ -42,7 +42,7 @@ function showTasks(filter) {
     })
   }
   // if li isn't empty, insert this value inside taskbox else insert span
-  taskBox.innerHTML = liTag || `<p>You don't have any task here</p>`
+  taskBox.innerHTML = liTag || `<p class="instructor">You don't have any task here</p>`
   let checkTask = taskBox.querySelectorAll('.task')
   !checkTask.length
     ? clearAll.classList.remove('active')
@@ -88,6 +88,8 @@ function editTask(taskId, textName) {
 
 
 function deleteTask(deleteId, filter) {
+  let confirmDel = confirm("Are you sure you want to delete this task ?");
+  if(!confirmDel) return;
   isEditTask = false
   tasks.splice(deleteId, 1)
   localStorage.setItem('task', JSON.stringify(tasks))
@@ -95,7 +97,7 @@ function deleteTask(deleteId, filter) {
 }
 
 
-addTaskBtn.addEventListener('click', () => {
+addTaskBtn.addEventListener('click', ()=> {
   let userTask = taskInput.value.trim()
     // if isEditedTask isn't true
     if (!isEditTask) {
