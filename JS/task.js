@@ -2,6 +2,8 @@ const taskInput = document.querySelector('.task-input input')
 const filters = document.querySelectorAll('.filters span')
 const clearAll = document.querySelector('.clear-btn')
 const taskBox = document.querySelector('.task-box')
+const controls = document.querySelector('.controls')
+const addTaskBtn = document.querySelector('.add-task')
 
 clearAll.addEventListener('click', clearAllTasks)
 
@@ -93,12 +95,8 @@ function deleteTask(deleteId, filter) {
 }
 
 
-
-
-
-taskInput.addEventListener('keyup', (e) => {
+addTaskBtn.addEventListener('click', () => {
   let userTask = taskInput.value.trim()
-  if (e.key == 'Enter' && userTask) {
     // if isEditedTask isn't true
     if (!isEditTask) {
       //if todo is not existed, pass an empty array to tasks
@@ -113,12 +111,18 @@ taskInput.addEventListener('keyup', (e) => {
     localStorage.setItem('task', JSON.stringify(tasks))
     showTasks(document.querySelector('span.active').id)
     clearAll.classList.add('show')
+    controls.classList.add('left')
+    controls.classList.remove('center')
 
-  }
 
 })
 
+
+
 function clearAllTasks() {
+  controls.classList.add('center')
+  controls.classList.remove('left')
+
   clearAll.classList.remove('show')
   isEditTask = false
   tasks.splice(0, tasks.length)
