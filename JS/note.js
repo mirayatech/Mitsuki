@@ -29,12 +29,15 @@ const notes = JSON.parse(localStorage.getItem('notes') || '[]')
 let isUpdate = false
 let updateId = false
 
-addNoteBtn.addEventListener('click', () => {
+addNoteBtn.addEventListener('click', noteMoudle)
+
+function noteMoudle(e) {
   addNotePopupModule.classList.add('show')
   noteTitleTag.focus()
-})
 
-// Close the popup
+}
+
+
 notePopupCloseIcon.addEventListener('click', () => {
   isUpdate = false
   noteTitleTag.value = ''
@@ -73,7 +76,6 @@ showNotes()
 function showSettingsMenu(element) {
   element.parentElement.classList.add('show')
   document.addEventListener('click', (e) => {
-    // removing show class from the settings menu on document click
     if (e.target.tagName != 'I' || e.target != element) {
       element.parentElement.classList.remove('show')
     }
@@ -97,7 +99,6 @@ function updateNote(noteId, title, desc) {
   console.log(noteId, title, desc)
 }
 
-// Add Note information to Local storage
 addNotePopupModuleBtn.addEventListener('click', (event) => {
   event.preventDefault()
 
