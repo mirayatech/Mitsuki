@@ -169,7 +169,7 @@
   width: 250px;
   border-radius: 15px;
   background: var(--white);
-  border: 2px solid var(--blue);
+  border: 2px solid var(--text-color);
 }
 
 .note-page .add-note {
@@ -185,16 +185,16 @@
   padding: 28px;
   cursor: pointer;
   border-radius: 50%;
-  color: var(--blue);
+  color: var(--text-color);
   font-size: calc(20 / 16 * 1rem);
-  border: 2px dashed var(--blue);
+  border: 2px dashed var(--text-color);
 }
 .note-page .add-note p {
   cursor: default;
   font-size: calc(18 / 16 * 1rem);
   font-weight: 500;
   padding-top: 20px;
-  color: var(--blue);
+  color: var(--text-color);
 }
 
 /* Note Card */
@@ -210,9 +210,7 @@
   border: 2px solid var(--nav-color);
 }
 
-.note-card:hover {
-  border: 2px solid var(--blue);
-}
+
 
 .note-card::-webkit-scrollbar {
   width: 3px;

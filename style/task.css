@@ -90,7 +90,7 @@
 }
 /* Controlls */
 
-.controls.left {
+.controls  {
   width: 100%;
   margin-bottom: 20px;
   display: flex;
@@ -98,15 +98,9 @@
   justify-content: space-between;
 }
 
-.controls.center {
-  width: 100%;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.controls button.show {
+.controls button  {
+  cursor: pointer;
   display: block;
   font-size: calc(17 / 16 * 1rem);
   border-radius: 7px;
@@ -118,9 +112,6 @@
   transition: all 0.2s ease;
 }
 
-.controls button {
-  display: none;
-}
 
 .controls button:hover {
   color: #d04134;
