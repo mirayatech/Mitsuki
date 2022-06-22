@@ -3,12 +3,11 @@ const filters = document.querySelectorAll('.filters span')
 const clearAll = document.querySelector('.clear-btn')
 const taskBox = document.querySelector('.task-box')
 
+clearAll.addEventListener('click', clearAllTasks)
+
 let editId
 let isEditTask = false,
-  // Getting Local Storage task
   tasks = JSON.parse(localStorage.getItem('task'))
-
-// -------------------------------------------------------------------------------------------------------------------
 
 filters.forEach((btn) => {
   btn.addEventListener('click', () => {
@@ -18,15 +17,12 @@ filters.forEach((btn) => {
   })
 })
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Show the tasks inside the taskBox (that are in the local storage)
 function showTasks(filter) {
   let liTag = ''
   if (tasks) {
     tasks.forEach((todo, id) => {
-      // if todo status is completed, set the is completed value to checked
-      let completed = todo.status == 'completed' ? 'checked' : ''
+      let completed = todo.status == 'completed' ? 'checked' : '' // if todo status is completed, set the is completed value to checked
       if (filter == todo.status || filter == 'all') {
         liTag += `<li class="task">
                             <label for="${id}">
@@ -44,7 +40,7 @@ function showTasks(filter) {
     })
   }
   // if li isn't empty, insert this value inside taskbox else insert span
-  taskBox.innerHTML = liTag || `<span>You don't have any task here</span>`
+  taskBox.innerHTML = liTag || `<p>You don't have any task here</p>`
   let checkTask = taskBox.querySelectorAll('.task')
   !checkTask.length
     ? clearAll.classList.remove('active')
@@ -55,9 +51,7 @@ function showTasks(filter) {
 }
 showTasks('all')
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Function: Show Menu
 function showMenu(selectedTask) {
   let menuDiv = selectedTask.parentElement.lastElementChild
   menuDiv.classList.add('show')
@@ -68,28 +62,20 @@ function showMenu(selectedTask) {
   })
 }
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Function: Update Status
 function updateStatus(selectedTask) {
-  // getting paragraph that contains task name
-  let taskName = selectedTask.parentElement.lastElementChild
+  let taskName = selectedTask.parentElement.lastElementChild// getting paragraph that contains task name
   if (selectedTask.checked) {
     taskName.classList.add('checked')
-    // updating the status to completed
     tasks[selectedTask.id].status = 'completed'
   } else {
     taskName.classList.remove('checked')
-    // updating the status of selected task to pending
     tasks[selectedTask.id].status = 'pending'
   }
-  // saving the update status to localstorage
   localStorage.setItem('task', JSON.stringify(tasks))
 }
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Function: Edit Task
 function editTask(taskId, textName) {
   editId = taskId
   isEditTask = true
@@ -98,29 +84,17 @@ function editTask(taskId, textName) {
   taskInput.classList.add('active')
 }
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Function: Delete Task
 function deleteTask(deleteId, filter) {
   isEditTask = false
-  // Delete task from local storage
   tasks.splice(deleteId, 1)
   localStorage.setItem('task', JSON.stringify(tasks))
   showTasks(filter)
 }
 
-// -------------------------------------------------------------------------------------------------------------------
 
-// Clear All Button
-clearAll.addEventListener('click', () => {
-  // removing all items of array/tasks
-  isEditTask = false
-  tasks.splice(0, tasks.length)
-  localStorage.setItem('task', JSON.stringify(tasks))
-  showTasks()
-})
 
-// Everytime we write and hit enter, we add to the Local Storage
+
 
 taskInput.addEventListener('keyup', (e) => {
   let userTask = taskInput.value.trim()
@@ -138,5 +112,16 @@ taskInput.addEventListener('keyup', (e) => {
     taskInput.value = ''
     localStorage.setItem('task', JSON.stringify(tasks))
     showTasks(document.querySelector('span.active').id)
+    clearAll.classList.add('show')
+
   }
+
 })
+
+function clearAllTasks() {
+  clearAll.classList.remove('show')
+  isEditTask = false
+  tasks.splice(0, tasks.length)
+  localStorage.setItem('task', JSON.stringify(tasks))
+  showTasks()
+}
