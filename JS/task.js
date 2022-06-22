@@ -112,9 +112,6 @@ addTaskBtn.addEventListener('click', ()=> {
     taskInput.value = ''
     localStorage.setItem('task', JSON.stringify(tasks))
     showTasks(document.querySelector('span.active').id)
-    clearAll.classList.add('show')
-    controls.classList.add('left')
-    controls.classList.remove('center')
 
 
 })
@@ -122,10 +119,6 @@ addTaskBtn.addEventListener('click', ()=> {
 
 
 function clearAllTasks() {
-  controls.classList.add('center')
-  controls.classList.remove('left')
-
-  clearAll.classList.remove('show')
   isEditTask = false
   tasks.splice(0, tasks.length)
   localStorage.setItem('task', JSON.stringify(tasks))
