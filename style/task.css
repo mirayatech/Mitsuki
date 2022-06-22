@@ -6,10 +6,8 @@
   --medium-grey: #e6e6e6;
   --text-color: #8d8d8d;
   --body-color: #f6f8fa;
-  --blue: #4285f4;
-  --red: #db4437;
-  --yellow: #f4b400;
-  --green: #0f9d58;
+  --green: #6ac46d;
+  --red: #e23333;
 }
 /* Task Page */
 .task-page.hide {
@@ -74,7 +72,7 @@
 }
 
 .task-input input:focus {
-  border: 2px solid var(--blue);
+  border: 2px solid var(--nav-color);
 }
 
 .task-input input::placeholder {
@@ -92,54 +90,42 @@
   justify-content: space-between;
 }
 
-.controls button {
+.controls button.show {
+  transform: scale(1);
   cursor: pointer;
-  padding: 5px 0 5px 0;
-  font-size: calc(14 / 16 * 1rem);
+  font-size: calc(17 / 16 * 1rem);
   border-radius: 7px;
   font-weight: 500;
-  color: var(--white);
+  color: var(--red);
   width: 100px;
-  background: var(--blue);
-  border: 2px solid var(--blue);
-  transition: all 0.3s ease;
+  border: var(--white);
+  background: var(--white);
+  transition: all 0.2s ease;
+}
+
+.controls button {
+  transform: scale(0);
 }
 
 .controls button:hover {
-  background: #3f7fe6;
+  color: #d04134;
 }
 
 .controls .filters span {
   font-weight: 500;
+  color: var(--text-color);
   cursor: pointer;
   font-size: calc(17 / 16 * 1rem);
   transition: all 0.3s ease;
+  border-bottom: 2px solid var(--white);
 }
 
 .controls .filters span:not(:first-child) {
   margin-left: 30px;
 }
 
-span.active:first-child {
-  color: var(--red);
-}
-
-span.active:nth-child(2) {
-  color: var(--yellow);
-}
-span.active:nth-child(3) {
-  color: var(--green);
-}
-
-span:hover:first-child {
-  color: var(--red);
-}
-
-span:hover:nth-child(2) {
-  color: var(--yellow);
-}
-span:hover:nth-child(3) {
-  color: var(--green);
+.controls .filters span.active {
+  color: var(--dark-grey);
 }
 
 /* Task  */
