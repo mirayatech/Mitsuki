@@ -26,6 +26,10 @@ In this note app, users can easily add, edit, or delete their notes. The notes u
 
 
 
-https://user-images.githubusercontent.com/71933266/174468721-0adbb631-3a5f-47fa-9c90-ba9b2aa77291.mp4
+
+
+https://user-images.githubusercontent.com/71933266/175238913-fc350c96-e74d-4006-b04d-9e9b7c456483.mov
+
+
 
 
