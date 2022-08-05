@@ -22,7 +22,7 @@ In this note app, users can easily add, edit, or delete their notes. The notes u
 
 ## How it looks 🎥
 
-🔗 https://mitsuki.netlify.app/
+🔗 https://mitsuki-psi.vercel.app/
 
 
 
